@@ -1,0 +1,1 @@
+C:\Users\Administrator\AppData\Local\UiPath\app-19.11.0-beta0002\UiRobot.exe execute --file "C:\Users\Administrator\Documents\UiPath\FinalizacionLocalizacionMercancias\Main.xaml"

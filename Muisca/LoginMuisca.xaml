@@ -1,0 +1,769 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="LoginMuisca" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/cv" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing" xmlns:uc="clr-namespace:UiPath.CV;assembly=UiPath.CV" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1398,4539</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>LoginMuisca_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="21">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="38">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="LoginMuisca" sap:VirtualizedContainerService.HintSize="1408,4334" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Boolean" Name="swError" />
+      <Variable x:TypeArguments="x:String" Name="strUser" />
+      <Variable x:TypeArguments="x:String" Name="strPass" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Pick DisplayName="Validar estado Consulta DO" sap:VirtualizedContainerService.HintSize="1366,502" sap2010:WorkflowViewState.IdRef="Pick_1">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <PickBranch sap:VirtualizedContainerService.HintSize="384,456" sap2010:WorkflowViewState.IdRef="PickBranch_1">
+        <PickBranch.Trigger>
+          <ui:WaitUiElementAppear FoundElement="{x:Null}" DisplayName="Find Element ' - Error" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_1" WaitActive="False" WaitVisible="False">
+            <ui:WaitUiElementAppear.Target>
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="1189ed9a8bd5970ccf4ced387adb4bd5" Selector="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' idx='1' title='importacionescarga.dian.gov.co*' /&gt;&lt;wnd aaname='Horizontal' cls='Chrome_RenderWidgetHostHWND' title='Chrome Legacy Window' /&gt;" TimeoutMS="30000" WaitForReady="INTERACTIVE" />
+            </ui:WaitUiElementAppear.Target>
+          </ui:WaitUiElementAppear>
+        </PickBranch.Trigger>
+        <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:Boolean">[swError]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+      </PickBranch>
+      <PickBranch sap:VirtualizedContainerService.HintSize="384,456" sap2010:WorkflowViewState.IdRef="PickBranch_2">
+        <PickBranch.Trigger>
+          <ui:WaitUiElementAppear FoundElement="{x:Null}" DisplayName="Find Element ' - Error" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_2" WaitActive="False" WaitVisible="False">
+            <ui:WaitUiElementAppear.Target>
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="fb0bd35364fe741a932f5ca852997815" Selector="&lt;html app='chrome.exe' title='DIAN' /&gt;&lt;webctrl aaname='Iniciar sesión' tag='SPAN' /&gt;" TimeoutMS="30000" WaitForReady="INTERACTIVE" />
+            </ui:WaitUiElementAppear.Target>
+          </ui:WaitUiElementAppear>
+        </PickBranch.Trigger>
+        <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:Boolean">[swError]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+          </Assign.Value>
+        </Assign>
+      </PickBranch>
+      <PickBranch sap:VirtualizedContainerService.HintSize="384,456" sap2010:WorkflowViewState.IdRef="PickBranch_3">
+        <PickBranch.Trigger>
+          <ui:WaitUiElementAppear FoundElement="{x:Null}" DisplayName="Find Element 'H1'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_3" WaitActive="False" WaitVisible="False">
+            <ui:WaitUiElementAppear.Target>
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="0c181d066f7b813828f3fda1a0996c35" Selector="&lt;html app='chrome.exe' title='Dirección de Impuestos y Aduanas Nacionales de Colombia' /&gt;&lt;webctrl tag='H1' /&gt;" TimeoutMS="30000" WaitForReady="INTERACTIVE" />
+            </ui:WaitUiElementAppear.Target>
+          </ui:WaitUiElementAppear>
+        </PickBranch.Trigger>
+        <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:Boolean">[swError]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+          </Assign.Value>
+        </Assign>
+      </PickBranch>
+    </Pick>
+    <If Condition="[swError]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="1366,3700" sap2010:WorkflowViewState.IdRef="If_3">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <If.Then>
+        <Throw DisplayName="Lanzar excepción" Exception="[New Exception( in_Config(&quot;MSG_ERROR_CONSULTA_DO_MUISCA&quot;).ToString )]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
+      </If.Then>
+      <If.Else>
+        <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="1068,3552" sap2010:WorkflowViewState.IdRef="Sequence_11">
+          <Sequence.Variables>
+            <Variable x:TypeArguments="x:Boolean" Name="swMuiscaOld" />
+          </Sequence.Variables>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Pick DisplayName="Seleccionar tipo Muisca" sap:VirtualizedContainerService.HintSize="1026,601" sap2010:WorkflowViewState.IdRef="Pick_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <PickBranch sap:VirtualizedContainerService.HintSize="426,555" sap2010:WorkflowViewState.IdRef="PickBranch_4">
+              <PickBranch.Trigger>
+                <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="376,198" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:WaitUiElementAppear FoundElement="{x:Null}" DisplayName="Find Element 'SELECT  vistaLogin:frmL...'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_4" WaitActive="False" WaitVisible="False">
+                    <ui:WaitUiElementAppear.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="52792deb09b8d6eeaabdf0d81f04fbb5" Selector="&lt;html app='chrome.exe' title='Dirección de Impuestos y Aduanas Nacionales de Colombia' /&gt;&lt;webctrl id='vistaLogin:frmLogin:selNit' tag='SELECT' /&gt;" TimeoutMS="30000" WaitForReady="COMPLETE" />
+                    </ui:WaitUiElementAppear.Target>
+                  </ui:WaitUiElementAppear>
+                </Sequence>
+              </PickBranch.Trigger>
+              <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Boolean">[swMuiscaOld]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                  </Assign.Value>
+                </Assign>
+              </Sequence>
+            </PickBranch>
+            <PickBranch sap:VirtualizedContainerService.HintSize="426,555" sap2010:WorkflowViewState.IdRef="PickBranch_5">
+              <PickBranch.Trigger>
+                <ui:WaitUiElementAppear FoundElement="{x:Null}" DisplayName="Find Element 'SELECT  vistaLogin:frmL...'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_5" WaitActive="False" WaitVisible="False">
+                  <ui:WaitUiElementAppear.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="52792deb09b8d6eeaabdf0d81f04fbb5" Selector="&lt;html app='chrome.exe' title='DIAN' /&gt;&lt;webctrl name='aNombreDe' tag='SELECT' /&gt;" TimeoutMS="30000" WaitForReady="INTERACTIVE" />
+                  </ui:WaitUiElementAppear.Target>
+                </ui:WaitUiElementAppear>
+              </PickBranch.Trigger>
+              <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="376,251" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;False&quot;]" TopMost="True" />
+                <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_5">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Boolean">[swMuiscaOld]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                  </Assign.Value>
+                </Assign>
+              </Sequence>
+            </PickBranch>
+          </Pick>
+          <If Condition="[swMuiscaOld]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="1026,1042" sap2010:WorkflowViewState.IdRef="If_1">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <If.Then>
+              <Sequence DisplayName="Login Muisca 2" sap:VirtualizedContainerService.HintSize="376,894" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:SelectItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item A nombre de" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="SelectItem_1" Item="AUTORIZACIONES / PODERES">
+                  <ui:SelectItem.Items>
+                    <scg:List x:TypeArguments="x:String" Capacity="8">
+                      <x:String>NIT</x:String>
+                      <x:String>A NOMBRE PROPIO</x:String>
+                      <x:String>UAE DIRECCIÓN DE IMPUESTOS Y ADUANAS NACIONALES</x:String>
+                      <x:String>AUTORIZACIONES / PODERES</x:String>
+                      <x:String>ORGANIZACION NO OBLIGADA A RUT</x:String>
+                    </scg:List>
+                  </ui:SelectItem.Items>
+                  <ui:SelectItem.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="52792deb09b8d6eeaabdf0d81f04fbb5" Selector="&lt;html app='chrome.exe' title='Dirección de Impuestos y Aduanas Nacionales de Colombia' /&gt;&lt;webctrl id='vistaLogin:frmLogin:selNit' tag='SELECT' /&gt;" WaitForReady="INTERACTIVE">
+                      <ui:Target.TimeoutMS>
+                        <InArgument x:TypeArguments="x:Int32" />
+                      </ui:Target.TimeoutMS>
+                    </ui:Target>
+                  </ui:SelectItem.Target>
+                </ui:SelectItem>
+                <ui:SelectItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item Tipo documento" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="SelectItem_2" Item="Cédula de Ciudadanía">
+                  <ui:SelectItem.Items>
+                    <scg:List x:TypeArguments="x:String" Capacity="16">
+                      <x:String>Registro Civil de Nacimiento</x:String>
+                      <x:String>Tarjeta de Identidad</x:String>
+                      <x:String>Cédula de Ciudadanía</x:String>
+                      <x:String>Tarjeta de Extranjería</x:String>
+                      <x:String>Cédula de Extranjería</x:String>
+                      <x:String>Pasaporte</x:String>
+                      <x:String>Documento de Identificación Extranjero</x:String>
+                      <x:String>Certificado Registraduría sin Identificación</x:String>
+                      <x:String>Documento de Identificación Extranjeros Persona Jurídica</x:String>
+                      <x:String>Sin Identificación del Exterior o para Uso Definido DIAN</x:String>
+                      <x:String>Carné Diplomático</x:String>
+                    </scg:List>
+                  </ui:SelectItem.Items>
+                  <ui:SelectItem.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="129690983331ede4e5ec1144556350f7" Selector="&lt;html app='chrome.exe' title='Dirección de Impuestos y Aduanas Nacionales de Colombia' /&gt;&lt;webctrl id='vistaLogin:frmLogin:selTipoDoc' tag='SELECT' /&gt;" WaitForReady="INTERACTIVE">
+                      <ui:Target.TimeoutMS>
+                        <InArgument x:TypeArguments="x:Int32" />
+                      </ui:Target.TimeoutMS>
+                    </ui:Target>
+                  </ui:SelectItem.Target>
+                </ui:SelectItem>
+                <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type Into Documento" EmptyField="True" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_1" SendWindowMessages="False" SimulateType="False" Text="[in_Config(&quot;User_SigloXXI_MAP&quot;).ToString]">
+                  <ui:TypeInto.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="e290c3e92ad893f518c33aa00ac782de" Selector="&lt;html app='chrome.exe' title='Dirección de Impuestos y Aduanas Nacionales de Colombia' /&gt;&lt;webctrl id='vistaLogin:frmLogin:txtUsuario' tag='INPUT' /&gt;" WaitForReady="INTERACTIVE">
+                      <ui:Target.TimeoutMS>
+                        <InArgument x:TypeArguments="x:Int32" />
+                      </ui:Target.TimeoutMS>
+                    </ui:Target>
+                  </ui:TypeInto.Target>
+                </ui:TypeInto>
+                <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type Into 'INPUT  vistaLogin:frmLo...'" EmptyField="True" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_2" SendWindowMessages="False" SimulateType="False" Text="[in_Config(&quot;Pass_SigloXXI_MAP&quot;).ToString]">
+                  <ui:TypeInto.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="ef8eee7cf396526527c2ed8aa92ffaf5" Selector="&lt;html app='chrome.exe' title='Dirección de Impuestos y Aduanas Nacionales de Colombia' /&gt;&lt;webctrl id='vistaLogin:frmLogin:txtCadena' tag='INPUT' /&gt;" WaitForReady="INTERACTIVE">
+                      <ui:Target.TimeoutMS>
+                        <InArgument x:TypeArguments="x:Int32" />
+                      </ui:Target.TimeoutMS>
+                    </ui:Target>
+                  </ui:TypeInto.Target>
+                </ui:TypeInto>
+                <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'INPUT'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                  <ui:Click.CursorPosition>
+                    <ui:CursorPosition Position="Center">
+                      <ui:CursorPosition.OffsetX>
+                        <InArgument x:TypeArguments="x:Int32" />
+                      </ui:CursorPosition.OffsetX>
+                      <ui:CursorPosition.OffsetY>
+                        <InArgument x:TypeArguments="x:Int32" />
+                      </ui:CursorPosition.OffsetY>
+                    </ui:CursorPosition>
+                  </ui:Click.CursorPosition>
+                  <ui:Click.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="3f982501a3e549d9d98405a24e164a88" Selector="&lt;html app='chrome.exe' title='Dirección de Impuestos y Aduanas Nacionales de Colombia' /&gt;&lt;webctrl name='vistaLogin:frmLogin:_id18' tag='INPUT' /&gt;" WaitForReady="INTERACTIVE">
+                      <ui:Target.TimeoutMS>
+                        <InArgument x:TypeArguments="x:Int32" />
+                      </ui:Target.TimeoutMS>
+                    </ui:Target>
+                  </ui:Click.Target>
+                </ui:Click>
+              </Sequence>
+            </If.Then>
+            <If.Else>
+              <Sequence DisplayName="Login Muisca" sap:VirtualizedContainerService.HintSize="376,894" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:SelectItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item Tipo de usuario" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="SelectItem_3" Item="AUTORIZACIONES / PODERES">
+                  <ui:SelectItem.Items>
+                    <scg:List x:TypeArguments="x:String" Capacity="8">
+                      <x:String>Seleccione el tipo de usuario</x:String>
+                      <x:String>NIT</x:String>
+                      <x:String>A NOMBRE PROPIO</x:String>
+                      <x:String>UAE DIRECCIÓN DE IMPUESTOS Y ADUANAS NACIONALES</x:String>
+                      <x:String>AUTORIZACIONES / PODERES</x:String>
+                      <x:String>ORGANIZACION NO OBLIGADA A RUT</x:String>
+                    </scg:List>
+                  </ui:SelectItem.Items>
+                  <ui:SelectItem.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="4e49688fbdbc3861f2f437df058cbeaa" Selector="&lt;html app='chrome.exe' title='DIAN' /&gt;&lt;webctrl name='aNombreDe' tag='SELECT' /&gt;" WaitForReady="INTERACTIVE">
+                      <ui:Target.TimeoutMS>
+                        <InArgument x:TypeArguments="x:Int32" />
+                      </ui:Target.TimeoutMS>
+                    </ui:Target>
+                  </ui:SelectItem.Target>
+                </ui:SelectItem>
+                <ui:SelectItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item Tipo documento" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="SelectItem_4" Item="Cédula de ciudadanía">
+                  <ui:SelectItem.Items>
+                    <scg:List x:TypeArguments="x:String" Capacity="16">
+                      <x:String>Tipo de documento</x:String>
+                      <x:String>Tarjeta de identidad</x:String>
+                      <x:String>Cédula de ciudadanía</x:String>
+                      <x:String>Certificado Registraduría sin identificación</x:String>
+                      <x:String>Tarjeta de extranjería</x:String>
+                      <x:String>Cédula de extranjería</x:String>
+                      <x:String>Pasaporte</x:String>
+                      <x:String>Documento de identificación extranjero</x:String>
+                      <x:String>Sin identificación del exterior o para uso definido por DIAN</x:String>
+                      <x:String>Documento de Identificación extranjero Persona Jurídica</x:String>
+                      <x:String>Carné Diplomático</x:String>
+                    </scg:List>
+                  </ui:SelectItem.Items>
+                  <ui:SelectItem.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="ee3631f43456a553fc1b27f448847fa9" Selector="&lt;html app='chrome.exe' title='DIAN' /&gt;&lt;webctrl name='tipoDoc' tag='SELECT' /&gt;" WaitForReady="INTERACTIVE">
+                      <ui:Target.TimeoutMS>
+                        <InArgument x:TypeArguments="x:Int32" />
+                      </ui:Target.TimeoutMS>
+                    </ui:Target>
+                  </ui:SelectItem.Target>
+                </ui:SelectItem>
+                <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type Into num documento" EmptyField="True" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_3" SendWindowMessages="False" SimulateType="False" Text="[in_Config(&quot;User_SigloXXI_MAP&quot;).ToString]">
+                  <ui:TypeInto.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="4a36d49190e52896b9412023e8447257" Selector="&lt;html app='chrome.exe' title='DIAN' /&gt;&lt;webctrl name='numDoc' tag='INPUT' /&gt;" WaitForReady="INTERACTIVE">
+                      <ui:Target.TimeoutMS>
+                        <InArgument x:TypeArguments="x:Int32" />
+                      </ui:Target.TimeoutMS>
+                    </ui:Target>
+                  </ui:TypeInto.Target>
+                </ui:TypeInto>
+                <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type Into 'DIV'" EmptyField="True" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_4" SendWindowMessages="False" SimulateType="False" Text="[in_Config(&quot;Pass_SigloXXI_MAP&quot;).ToString]">
+                  <ui:TypeInto.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="b8a46fd7861c6614de1666b5ebfd5a8e" Selector="&lt;html app='chrome.exe' title='DIAN' /&gt;&lt;webctrl name='password' tag='INPUT' /&gt;" WaitForReady="INTERACTIVE">
+                      <ui:Target.TimeoutMS>
+                        <InArgument x:TypeArguments="x:Int32" />
+                      </ui:Target.TimeoutMS>
+                    </ui:Target>
+                  </ui:TypeInto.Target>
+                </ui:TypeInto>
+                <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'SPAN'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                  <ui:Click.CursorPosition>
+                    <ui:CursorPosition Position="Center">
+                      <ui:CursorPosition.OffsetX>
+                        <InArgument x:TypeArguments="x:Int32" />
+                      </ui:CursorPosition.OffsetX>
+                      <ui:CursorPosition.OffsetY>
+                        <InArgument x:TypeArguments="x:Int32" />
+                      </ui:CursorPosition.OffsetY>
+                    </ui:CursorPosition>
+                  </ui:Click.CursorPosition>
+                  <ui:Click.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="7e6d956157f89525e4ac2b4f183c66e6" Selector="&lt;html app='chrome.exe' title='DIAN' /&gt;&lt;webctrl aaname='Ingresar' tag='SPAN' /&gt;" WaitForReady="INTERACTIVE">
+                      <ui:Target.TimeoutMS>
+                        <InArgument x:TypeArguments="x:Int32" />
+                      </ui:Target.TimeoutMS>
+                    </ui:Target>
+                  </ui:Click.Target>
+                </ui:Click>
+              </Sequence>
+            </If.Else>
+          </If>
+          <Sequence DisplayName="Ir a consulta DO - Menu" sap:VirtualizedContainerService.HintSize="1026,636" sap2010:WorkflowViewState.IdRef="Sequence_8">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'INPUT'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_8" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+              <ui:Click.CursorPosition>
+                <ui:CursorPosition Position="Center">
+                  <ui:CursorPosition.OffsetX>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetX>
+                  <ui:CursorPosition.OffsetY>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetY>
+                </ui:CursorPosition>
+              </ui:Click.CursorPosition>
+              <ui:Click.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="6d7a767d03dc4a715cc4441188ca18f1" Selector="&lt;html app='chrome.exe' title='DIAN - MUISCA' /&gt;&lt;webctrl aaname='Ingresar' name='vistaActuarAutorizacion:frmActuarAutorizacion:tblSelActuacion:0:*' tag='INPUT' /&gt;" TimeoutMS="15000" WaitForReady="INTERACTIVE" />
+              </ui:Click.Target>
+            </ui:Click>
+            <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Carga" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+              <ui:Click.CursorPosition>
+                <ui:CursorPosition Position="Center">
+                  <ui:CursorPosition.OffsetX>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetX>
+                  <ui:CursorPosition.OffsetY>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetY>
+                </ui:CursorPosition>
+              </ui:Click.CursorPosition>
+              <ui:Click.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="65883392d30f10c7725b1eee6e46dcab" Selector="&lt;html app='chrome.exe' title='DIAN - MUISCA - ARQUITECTURA' /&gt;&lt;webctrl parentid='vistaMenuUsuario:frmMenuUsuario:_id28:id6554' tag='A' /&gt;" WaitForReady="INTERACTIVE">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                </ui:Target>
+              </ui:Click.Target>
+            </ui:Click>
+            <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click Reportes" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_9" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+              <ui:Click.CursorPosition>
+                <ui:CursorPosition Position="Center">
+                  <ui:CursorPosition.OffsetX>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetX>
+                  <ui:CursorPosition.OffsetY>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetY>
+                </ui:CursorPosition>
+              </ui:Click.CursorPosition>
+              <ui:Click.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="865311eddaaee3cccd18fda42ff5a57e" Selector="&lt;html app='chrome.exe' title='DIAN - MUISCA - IMPORTACION' /&gt;&lt;webctrl parentid='vistaMenuUsuario:frmMenuUsuario:_id28:id15853' tag='A' /&gt;" WaitForReady="INTERACTIVE">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                </ui:Target>
+              </ui:Click.Target>
+            </ui:Click>
+            <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click - Documentos" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_10" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+              <ui:Click.CursorPosition>
+                <ui:CursorPosition Position="Center">
+                  <ui:CursorPosition.OffsetX>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetX>
+                  <ui:CursorPosition.OffsetY>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:CursorPosition.OffsetY>
+                </ui:CursorPosition>
+              </ui:Click.CursorPosition>
+              <ui:Click.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="e81814fc6ae2c33adc75aa814756ab9b" Selector="&lt;html app='chrome.exe' idx='*' /&gt;&lt;webctrl parentid='vistaMenuUsuario:frmMenuUsuario:_id28:id15910' tag='A' aaname='Consulta de documentos' /&gt;" WaitForReady="INTERACTIVE">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                </ui:Target>
+              </ui:Click.Target>
+            </ui:Click>
+          </Sequence>
+          <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" ApiKey="BQB+uiS2DXBiaBrGRCbQzi8sNdC5w6pnisxGvtpEHv97+dqbcIp6AxMS0WDl25Ze" DisplayName="Ámbito de pantalla de CV 'TD'" sap:VirtualizedContainerService.HintSize="1026,1061" sap2010:WorkflowViewState.IdRef="CVScope_1" Server="https://cv.uipath.com/" Version="V1">
+            <p:CVScope.Body>
+              <ActivityAction x:TypeArguments="x:Object">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="x:Object" Name="CVSessionData" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Hacer" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                  <p:CvElementExistsWithDescriptor Descriptor="[&quot;Target: Icon (687,385,52,50)&quot;]" DesignTimeScaleFactor="1" DisplayName="Elemento CV existente - Icono" sap:VirtualizedContainerService.HintSize="521,106" sap2010:WorkflowViewState.IdRef="CvElementExistsWithDescriptor_1" InformativeScreenshot="92ea71c23b9bf2d831f3c14f89fc6db6" Result="[swError]" Version="V1">
+                    <p:CvElementExistsWithDescriptor.DesignTimeDescriptor>
+                      <uc:CvDescriptor>
+                        <uc:CvDescriptor.Target>
+                          <uc:CvElementDescriptor DesignTimeArea="687, 385, 52, 50" ElementType="Icon" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADQAAAAyCAYAAAATIfj2AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHMSURBVGhD7ZnBioQwEET3/z9NRhRFEDx5FE+C4DFDLbhIp9TWmOjO5PBgWZLuetHJROdnmibzSUShpxOF1ui6zlRVZZIk+QV/931Px/rkEqGmaf5EJG3b0jm+cBbClWEiS0JeKWeh5W22BsawuT5wFmICDDbXB1FIwsIz2FwffIfQMAymrmuTZRkN5wP0Qk/0Zpm0WEIo+Hq9aNMQoLeLlCWEVWKNQoIMMpcWSyjkbbYGMshcWiwh1uAOZC4tUSgUMpeWKBQKmUtLFAqFzKXFEsIT5gy+4MqypA19I3NpsYQYeOK8S2xG+45CJQTGcbxdCuy9o1ALAawQaxKarSt1SAjkeU6bhGTrHcVhoSecxgHLBqLQEx4vtp6XvndTwLZdFAVtEJJLtm2syN0yp79Y5dHnrs+MzKXFEmLF70Dm0hKFtsBZD7cpcD33yVxaLhFCePaBxf/OislaWpyFEBhbuqwzc/aUzmppcBbSbKUYw+ZuwepocBLCysv5axw9pbMaGiyhNE1pA8bWmUqCsawGA/KshgZL6EjjvWPIEoxlNRhHFkpiCeGnDO1V8iGE3pf+nAJQEKu0d99fKYRe6OkiA6jQfyYKPZ0PE5rMGwKpNcRb90/tAAAAAElFTkSuQmCC" />
+                        </uc:CvDescriptor.Target>
+                      </uc:CvDescriptor>
+                    </p:CvElementExistsWithDescriptor.DesignTimeDescriptor>
+                  </p:CvElementExistsWithDescriptor>
+                  <If Condition="[swError]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="521,637" sap2010:WorkflowViewState.IdRef="If_2">
+                    <If.Then>
+                      <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="376,490" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[&quot;Target: Icon (687,385,52,50)&quot;]" DesignTimeScaleFactor="1" DisplayName="Clic de CV - Icono" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_1" InformativeScreenshot="92ea71c23b9bf2d831f3c14f89fc6db6" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V1">
+                          <p:CvClickWithDescriptor.CursorPosition>
+                            <ui:CursorPosition Position="Center">
+                              <ui:CursorPosition.OffsetX>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:CursorPosition.OffsetX>
+                              <ui:CursorPosition.OffsetY>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:CursorPosition.OffsetY>
+                            </ui:CursorPosition>
+                          </p:CvClickWithDescriptor.CursorPosition>
+                          <p:CvClickWithDescriptor.DesignTimeDescriptor>
+                            <uc:CvDescriptor>
+                              <uc:CvDescriptor.Target>
+                                <uc:CvElementDescriptor DesignTimeArea="687, 385, 52, 50" ElementType="Icon" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADQAAAAyCAYAAAATIfj2AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHMSURBVGhD7ZnBioQwEET3/z9NRhRFEDx5FE+C4DFDLbhIp9TWmOjO5PBgWZLuetHJROdnmibzSUShpxOF1ui6zlRVZZIk+QV/931Px/rkEqGmaf5EJG3b0jm+cBbClWEiS0JeKWeh5W22BsawuT5wFmICDDbXB1FIwsIz2FwffIfQMAymrmuTZRkN5wP0Qk/0Zpm0WEIo+Hq9aNMQoLeLlCWEVWKNQoIMMpcWSyjkbbYGMshcWiwh1uAOZC4tUSgUMpeWKBQKmUtLFAqFzKXFEsIT5gy+4MqypA19I3NpsYQYeOK8S2xG+45CJQTGcbxdCuy9o1ALAawQaxKarSt1SAjkeU6bhGTrHcVhoSecxgHLBqLQEx4vtp6XvndTwLZdFAVtEJJLtm2syN0yp79Y5dHnrs+MzKXFEmLF70Dm0hKFtsBZD7cpcD33yVxaLhFCePaBxf/OislaWpyFEBhbuqwzc/aUzmppcBbSbKUYw+ZuwepocBLCysv5axw9pbMaGiyhNE1pA8bWmUqCsawGA/KshgZL6EjjvWPIEoxlNRhHFkpiCeGnDO1V8iGE3pf+nAJQEKu0d99fKYRe6OkiA6jQfyYKPZ0PE5rMGwKpNcRb90/tAAAAAElFTkSuQmCC" />
+                              </uc:CvDescriptor.Target>
+                            </uc:CvDescriptor>
+                          </p:CvClickWithDescriptor.DesignTimeDescriptor>
+                          <p:CvClickWithDescriptor.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}">
+                              <ui:Target.TimeoutMS>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:Target.TimeoutMS>
+                              <ui:Target.WaitForReady>
+                                <InArgument x:TypeArguments="ui:WaitForReady" />
+                              </ui:Target.WaitForReady>
+                            </ui:Target>
+                          </p:CvClickWithDescriptor.Target>
+                        </p:CvClickWithDescriptor>
+                        <p:CvClickWithDescriptor DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" Descriptor="[&quot;Target: Button (277,125,66,33)&quot; +&#xA;&quot;Anchor: Text 'o' (131,134,16,16)&quot;]" DesignTimeScaleFactor="1" DisplayName="Clic de CV - Botón" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="CvClickWithDescriptor_2" InformativeScreenshot="1bbaa7412194675af899c976a879d059" KeyModifiers="None" MouseButton="BTN_LEFT" Version="V1">
+                          <p:CvClickWithDescriptor.CursorPosition>
+                            <ui:CursorPosition Position="Center">
+                              <ui:CursorPosition.OffsetX>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:CursorPosition.OffsetX>
+                              <ui:CursorPosition.OffsetY>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:CursorPosition.OffsetY>
+                            </ui:CursorPosition>
+                          </p:CvClickWithDescriptor.CursorPosition>
+                          <p:CvClickWithDescriptor.DesignTimeDescriptor>
+                            <uc:CvDescriptor>
+                              <uc:CvDescriptor.Anchors>
+                                <x:Array Type="uc:CvElementDescriptor">
+                                  <uc:CvElementDescriptor DesignTimeArea="131, 134, 16, 16" ElementType="Text" Text="o" />
+                                </x:Array>
+                              </uc:CvDescriptor.Anchors>
+                              <uc:CvDescriptor.Target>
+                                <uc:CvElementDescriptor DesignTimeArea="277, 125, 66, 33" ElementType="Button" />
+                              </uc:CvDescriptor.Target>
+                            </uc:CvDescriptor>
+                          </p:CvClickWithDescriptor.DesignTimeDescriptor>
+                          <p:CvClickWithDescriptor.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}">
+                              <ui:Target.TimeoutMS>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:Target.TimeoutMS>
+                              <ui:Target.WaitForReady>
+                                <InArgument x:TypeArguments="ui:WaitForReady" />
+                              </ui:Target.WaitForReady>
+                            </ui:Target>
+                          </p:CvClickWithDescriptor.Target>
+                        </p:CvClickWithDescriptor>
+                        <ui:Click DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="1000" DisplayName="Click 'push button  Continue'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_7" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+                          <ui:Click.CursorPosition>
+                            <ui:CursorPosition Position="Center">
+                              <ui:CursorPosition.OffsetX>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:CursorPosition.OffsetX>
+                              <ui:CursorPosition.OffsetY>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:CursorPosition.OffsetY>
+                            </ui:CursorPosition>
+                          </ui:Click.CursorPosition>
+                          <ui:Click.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="1a6584300dc5052c33c1ccd371ae28c2" Selector="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Filtros para la consulta - Google Chrome' /&gt;&lt;ctrl name='Contin*' role='push button' /&gt;" WaitForReady="INTERACTIVE">
+                              <ui:Target.TimeoutMS>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:Target.TimeoutMS>
+                            </ui:Target>
+                          </ui:Click.Target>
+                        </ui:Click>
+                      </Sequence>
+                    </If.Then>
+                  </If>
+                </Sequence>
+              </ActivityAction>
+            </p:CVScope.Body>
+            <p:CVScope.DesignTimeCache>
+              <uc:CVCache InformativeScreenshot="5667bde370834de9e2ca901e7f397bf6" LogicalPosition="0, 71" OcrText="importacionescarga.dian.gov.co wants to JIMENEZA.,' LA ELIANA ANDREA-- AGENC A DE ADI-ANAS SACO ses NIVEL I&#xA;Alarmas '[areas Cerrat&#xA;FlaEh Player will no Icnger be supported&#xA;December 2D2D.&#xA;o äfter g:ock&#xA;Sclicitud cambios&#xA;Repottes&#xA;Oocumentos de carga envii&#xA;Oocumentos migrados a S h&#xA;Oocumentos perfilados pcr&#xA;Comentarios Ousjas&#xA;Comunicadcs&#xA;Consulta Asuntos&#xA;Consulta Repcäss Conciliaciän&#xA;Consultat Fin-nas de Oocum.ento&#xA;Consultat documenlo Diligenciac&#xA;Oiligenciar Presentar&#xA;Factura Electrinica&#xA;Garantias&#xA;[n*actcres Aduanetos&#xA;Obligacidn Financisra Contribus'l&#xA;Ptessntaci6n de Informacidn pot&#xA;Ptocsdirniento ds DevolucidnfCc&#xA;Recibos de pago&#xA;Registro Unico T'ibutario&#xA;Ressr•a de Nérnsros de Docum&#xA;Salida de metcancl'as Click to enable Adobe Flash Player" Position="0, 71" ScaleFactor="1" ScreenshotGuid="3dc76e77-de4d-479e-ae99-1fd12aa23298" ServerVersion="1">
+                <uc:CVCache.CvUiElements>
+                  <scg:List x:TypeArguments="uc:CvElementInfo" Capacity="64">
+                    <uc:CvElementInfo Category="Button" Confidence="DesignTime" Region="349, 124, 65, 34" Score="1" />
+                    <uc:CvElementInfo Category="Button" Confidence="DesignTime" Region="277, 125, 66, 33" Score="1" />
+                    <uc:CvElementInfo Category="Icon" Confidence="DesignTime" Region="123, 40, 21, 20" Score="1" />
+                    <uc:CvElementInfo Category="Icon" Confidence="DesignTime" Region="594, 33, 24, 25" Score="1" />
+                    <uc:CvElementInfo Category="Icon" Confidence="DesignTime" Region="502, 34, 23, 23" Score="1" />
+                    <uc:CvElementInfo Category="Icon" Confidence="DesignTime" Region="687, 385, 52, 50" Score="1" />
+                    <uc:CvElementInfo Category="Icon" Confidence="DesignTime" Region="1082, 15, 48, 50" Score="1" />
+                    <uc:CvElementInfo Category="Icon" Confidence="DesignTime" Region="769, 33, 25, 25" Score="1" />
+                    <uc:CvElementInfo Category="CloseButton" Confidence="DesignTime" Region="405, 2, 17, 16" Score="1" />
+                    <uc:CvElementInfo Category="ArrowButton" Confidence="DesignTime" Region="1349, 1, 16, 16" Score="1" />
+                    <uc:CvElementInfo Category="Icon" Confidence="DesignTime" Region="680, 34, 24, 23" Score="1" />
+                    <uc:CvElementInfo Category="ArrowButton" Confidence="DesignTime" Region="1350, 640, 16, 17" Score="1" />
+                    <uc:CvElementInfo Category="Button" Confidence="DesignTime" Region="130, 133, 18, 18" Score="1" />
+                    <uc:CvElementInfo Category="Icon" Confidence="DesignTime" Region="130, 132, 18, 18" Score="1" />
+                    <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="242, 254, 12, 11" Score="1" />
+                    <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="243, 235, 10, 10" Score="1" />
+                    <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="226, 212, 21, 17" Score="1" />
+                    <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="243, 274, 10, 10" Score="1" />
+                    <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="209, 635, 10, 11" Score="1" />
+                    <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="243, 294, 11, 11" Score="1" />
+                    <uc:CvElementInfo Category="InputBox" Confidence="Runtime" Region="315, 99, 719, 558" Score="1" />
+                    <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="441, 9, 75, 16" Score="1" />
+                    <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="405, 2, 18, 18" Score="1" />
+                    <uc:CvElementInfo Category="ArrowButton" Confidence="Runtime" Region="130, 132, 18, 18" Score="1" />
+                    <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="207, 333, 13, 12" Score="1" />
+                    <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="208, 534, 12, 11" Score="1" />
+                    <uc:CvElementInfo Category="InputBox" Confidence="Runtime" Region="483, 8, 551, 21" Score="1" />
+                    <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="768, 33, 26, 25" Score="1" />
+                    <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="208, 575, 12, 11" Score="1" />
+                    <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="247, 274, 11, 12" Score="1" />
+                    <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="207, 414, 12, 12" Score="1" />
+                    <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="208, 494, 12, 12" Score="1" />
+                    <uc:CvElementInfo Category="Icon" Confidence="Runtime" Region="247, 234, 10, 12" Score="1" />
+                    <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="1082, 14, 47, 51" Score="1" />
+                    <uc:CvElementInfo Category="Button" Confidence="Runtime" Region="405, 2, 17, 18" Score="1" />
+                  </scg:List>
+                </uc:CVCache.CvUiElements>
+                <uc:CVCache.OcrTexts>
+                  <scg:List x:TypeArguments="uc:OcrTextInfo" Capacity="128">
+                    <uc:OcrTextInfo Region="126, 18, 208, 14" Text="importacionescarga.dian.gov.co" />
+                    <uc:OcrTextInfo Region="339, 19, 37, 10" Text="wants" />
+                    <uc:OcrTextInfo Region="381, 19, 13, 10" Text="to" />
+                    <uc:OcrTextInfo Region="538, 15, 58, 7" Text="JIMENEZA.,'" />
+                    <uc:OcrTextInfo Region="599, 15, 12, 7" Text="LA" />
+                    <uc:OcrTextInfo Region="614, 15, 34, 7" Text="ELIANA" />
+                    <uc:OcrTextInfo Region="650, 15, 50, 7" Text="ANDREA--" />
+                    <uc:OcrTextInfo Region="703, 15, 35, 7" Text="AGENC" />
+                    <uc:OcrTextInfo Region="742, 15, 6, 7" Text="A" />
+                    <uc:OcrTextInfo Region="751, 15, 13, 7" Text="DE" />
+                    <uc:OcrTextInfo Region="767, 15, 47, 7" Text="ADI-ANAS" />
+                    <uc:OcrTextInfo Region="818, 15, 30, 7" Text="SACO" />
+                    <uc:OcrTextInfo Region="852, 15, 19, 7" Text="ses" />
+                    <uc:OcrTextInfo Region="875, 15, 28, 7" Text="NIVEL" />
+                    <uc:OcrTextInfo Region="907, 15, 2, 7" Text="I" />
+                    <uc:OcrTextInfo Region="528, 42, 40, 9" Text="Alarmas" />
+                    <uc:OcrTextInfo Region="622, 42, 32, 9" Text="'[areas" />
+                    <uc:OcrTextInfo Region="797, 42, 29, 9" Text="Cerrat" />
+                    <uc:OcrTextInfo Region="126, 75, 25, 9" Text="FlaEh" />
+                    <uc:OcrTextInfo Region="156, 75, 31, 12" Text="Player" />
+                    <uc:OcrTextInfo Region="191, 75, 16, 9" Text="will" />
+                    <uc:OcrTextInfo Region="212, 78, 12, 6" Text="no" />
+                    <uc:OcrTextInfo Region="229, 75, 34, 12" Text="Icnger" />
+                    <uc:OcrTextInfo Region="267, 75, 12, 9" Text="be" />
+                    <uc:OcrTextInfo Region="283, 75, 53, 12" Text="supported" />
+                    <uc:OcrTextInfo Region="126, 95, 54, 9" Text="December" />
+                    <uc:OcrTextInfo Region="184, 95, 26, 9" Text="2D2D." />
+                    <uc:OcrTextInfo Region="131, 134, 16, 16" Text="o" />
+                    <uc:OcrTextInfo Region="341, 75, 24, 9" Text="äfter" />
+                    <uc:OcrTextInfo Region="367, 137, 28, 9" Text="g:ock" />
+                    <uc:OcrTextInfo Region="266, 196, 40, 8" Text="Sclicitud" />
+                    <uc:OcrTextInfo Region="311, 196, 39, 8" Text="cambios" />
+                    <uc:OcrTextInfo Region="254, 216, 43, 10" Text="Repottes" />
+                    <uc:OcrTextInfo Region="261, 256, 60, 8" Text="Oocumentos" />
+                    <uc:OcrTextInfo Region="325, 256, 12, 8" Text="de" />
+                    <uc:OcrTextInfo Region="341, 258, 26, 8" Text="carga" />
+                    <uc:OcrTextInfo Region="371, 256, 23, 8" Text="envii" />
+                    <uc:OcrTextInfo Region="261, 276, 60, 8" Text="Oocumentos" />
+                    <uc:OcrTextInfo Region="326, 276, 44, 10" Text="migrados" />
+                    <uc:OcrTextInfo Region="374, 278, 5, 6" Text="a" />
+                    <uc:OcrTextInfo Region="383, 276, 6, 8" Text="S" />
+                    <uc:OcrTextInfo Region="390, 276, 4, 8" Text="h" />
+                    <uc:OcrTextInfo Region="261, 296, 60, 8" Text="Oocumentos" />
+                    <uc:OcrTextInfo Region="326, 296, 46, 10" Text="perfilados" />
+                    <uc:OcrTextInfo Region="377, 298, 15, 8" Text="pcr" />
+                    <uc:OcrTextInfo Region="236, 316, 61, 8" Text="Comentarios" />
+                    <uc:OcrTextInfo Region="310, 316, 33, 10" Text="Ousjas" />
+                    <uc:OcrTextInfo Region="236, 336, 66, 8" Text="Comunicadcs" />
+                    <uc:OcrTextInfo Region="236, 356, 42, 8" Text="Consulta" />
+                    <uc:OcrTextInfo Region="281, 356, 39, 8" Text="Asuntos" />
+                    <uc:OcrTextInfo Region="236, 376, 42, 8" Text="Consulta" />
+                    <uc:OcrTextInfo Region="283, 376, 43, 10" Text="Repcäss" />
+                    <uc:OcrTextInfo Region="330, 375, 58, 9" Text="Conciliaciän" />
+                    <uc:OcrTextInfo Region="236, 396, 46, 8" Text="Consultat" />
+                    <uc:OcrTextInfo Region="286, 396, 32, 8" Text="Fin-nas" />
+                    <uc:OcrTextInfo Region="322, 396, 12, 8" Text="de" />
+                    <uc:OcrTextInfo Region="338, 396, 55, 8" Text="Oocum.ento" />
+                    <uc:OcrTextInfo Region="236, 416, 46, 8" Text="Consultat" />
+                    <uc:OcrTextInfo Region="286, 416, 53, 8" Text="documenlo" />
+                    <uc:OcrTextInfo Region="344, 416, 50, 10" Text="Diligenciac" />
+                    <uc:OcrTextInfo Region="236, 436, 51, 10" Text="Oiligenciar" />
+                    <uc:OcrTextInfo Region="297, 436, 47, 8" Text="Presentar" />
+                    <uc:OcrTextInfo Region="236, 456, 36, 8" Text="Factura" />
+                    <uc:OcrTextInfo Region="276, 455, 53, 9" Text="Electrinica" />
+                    <uc:OcrTextInfo Region="236, 475, 47, 9" Text="Garantias" />
+                    <uc:OcrTextInfo Region="236, 496, 51, 8" Text="[n*actcres" />
+                    <uc:OcrTextInfo Region="290, 496, 52, 8" Text="Aduanetos" />
+                    <uc:OcrTextInfo Region="236, 515, 50, 11" Text="Obligacidn" />
+                    <uc:OcrTextInfo Region="291, 516, 50, 8" Text="Financisra" />
+                    <uc:OcrTextInfo Region="345, 516, 49, 10" Text="Contribus'l" />
+                    <uc:OcrTextInfo Region="236, 535, 63, 9" Text="Ptessntaci6n" />
+                    <uc:OcrTextInfo Region="303, 536, 11, 8" Text="de" />
+                    <uc:OcrTextInfo Region="319, 535, 55, 9" Text="Informacidn" />
+                    <uc:OcrTextInfo Region="379, 538, 15, 8" Text="pot" />
+                    <uc:OcrTextInfo Region="236, 556, 69, 8" Text="Ptocsdirniento" />
+                    <uc:OcrTextInfo Region="309, 556, 12, 8" Text="ds" />
+                    <uc:OcrTextInfo Region="325, 555, 69, 9" Text="DevolucidnfCc" />
+                    <uc:OcrTextInfo Region="236, 576, 38, 8" Text="Recibos" />
+                    <uc:OcrTextInfo Region="278, 576, 12, 8" Text="de" />
+                    <uc:OcrTextInfo Region="294, 578, 23, 8" Text="pago" />
+                    <uc:OcrTextInfo Region="236, 596, 40, 10" Text="Registro" />
+                    <uc:OcrTextInfo Region="280, 596, 27, 8" Text="Unico" />
+                    <uc:OcrTextInfo Region="311, 596, 45, 8" Text="T'ibutario" />
+                    <uc:OcrTextInfo Region="236, 616, 40, 8" Text="Ressr•a" />
+                    <uc:OcrTextInfo Region="280, 616, 11, 8" Text="de" />
+                    <uc:OcrTextInfo Region="295, 615, 43, 9" Text="Nérnsros" />
+                    <uc:OcrTextInfo Region="343, 616, 11, 8" Text="de" />
+                    <uc:OcrTextInfo Region="358, 616, 36, 8" Text="Docum" />
+                    <uc:OcrTextInfo Region="236, 636, 29, 8" Text="Salida" />
+                    <uc:OcrTextInfo Region="269, 636, 12, 8" Text="de" />
+                    <uc:OcrTextInfo Region="285, 635, 55, 9" Text="metcancl'as" />
+                    <uc:OcrTextInfo Region="609, 446, 27, 10" Text="Click" />
+                    <uc:OcrTextInfo Region="641, 447, 9, 9" Text="to" />
+                    <uc:OcrTextInfo Region="656, 446, 38, 10" Text="enable" />
+                    <uc:OcrTextInfo Region="698, 446, 38, 10" Text="Adobe" />
+                    <uc:OcrTextInfo Region="741, 446, 31, 10" Text="Flash" />
+                    <uc:OcrTextInfo Region="778, 446, 36, 13" Text="Player" />
+                  </scg:List>
+                </uc:CVCache.OcrTexts>
+              </uc:CVCache>
+            </p:CVScope.DesignTimeCache>
+            <p:CVScope.OCREngine>
+              <ActivityFunc x:TypeArguments="sd:Image, scg:IEnumerable(scg:KeyValuePair(sd:Rectangle, x:String))">
+                <ActivityFunc.Argument>
+                  <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
+                </ActivityFunc.Argument>
+                <ui:MicrosoftOCR FilterRegion="{x:Null}" Language="{x:Null}" Output="{x:Null}" Scale="{x:Null}" Text="{x:Null}" ComputeSkewAngle="False" ExtractWords="True" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="MicrosoftOCR_1" Image="[Image]" Profile="Screen" />
+              </ActivityFunc>
+            </p:CVScope.OCREngine>
+            <p:CVScope.Target>
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="cb80bcec7b0c28baea73b6b072af1516" Selector="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Filtros para la consulta - Google Chrome' /&gt;&lt;ctrl name='Filtros para la consulta - Google Chrome' role='pane' /&gt;&lt;ctrl name='Google Chrome' role='pane' /&gt;&lt;ctrl idx='5' role='pane' /&gt;" WaitForReady="INTERACTIVE">
+                <ui:Target.TimeoutMS>
+                  <InArgument x:TypeArguments="x:Int32" />
+                </ui:Target.TimeoutMS>
+              </ui:Target>
+            </p:CVScope.Target>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </p:CVScope>
+        </Sequence>
+      </If.Else>
+    </If>
+  </Sequence>
+</Activity>
