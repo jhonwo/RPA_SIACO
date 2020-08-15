@@ -66,6 +66,7 @@
       <AssemblyReference>UiPath.AmazonWebServices</AssemblyReference>
       <AssemblyReference>System.Data.Entity</AssemblyReference>
       <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence sap2010:Annotation.AnnotationText="Description: In this file all other process specific files will be invoked. If an application exception occurs, the current transaction can be retried. If a BRE is thrown, the transaction will be skipped. Can be a flowchart or sequence. " DisplayName="ProcessTransaction" sap:VirtualizedContainerService.HintSize="966,3548" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -102,6 +103,10 @@
       <Variable x:TypeArguments="x:String" Name="txtConsignatario" />
       <Variable x:TypeArguments="x:String" Name="txtDocTransporteBL" />
       <Variable x:TypeArguments="x:String" Name="txtEstadoManifiesto" />
+      <Variable x:TypeArguments="x:String" Name="queryLogMap" />
+      <Variable x:TypeArguments="x:Int32" Name="resQuery" />
+      <Variable x:TypeArguments="x:String" Name="strFechaRegMap" />
+      <Variable x:TypeArguments="x:String" Name="strHoraRegMap" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -166,7 +171,7 @@
                   <av:PointCollection x:Key="ConnectorLocation">100,283 100,326.5</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Sequence DisplayName="Consultar Sin Fecha Real - Nada" sap:VirtualizedContainerService.HintSize="1641,2641" sap2010:WorkflowViewState.IdRef="Sequence_33">
+              <Sequence DisplayName="Consultar Sin Fecha Real - Nada" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_33">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -635,7 +640,7 @@
                                               <av:Size x:Key="ShapeSize">200,66</av:Size>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
-                                          <Sequence DisplayName="Validaciones - Obtener Info" sap:VirtualizedContainerService.HintSize="1559,3538" sap2010:WorkflowViewState.IdRef="Sequence_432">
+                                          <Sequence DisplayName="Validaciones - Obtener Info" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_432">
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -2044,7 +2049,7 @@
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke ConsultaDO_GRM workflow" sap:VirtualizedContainerService.HintSize="915,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="Comunes\ConsultaDO_GRM.xaml">
+                        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke ConsultaDO_GRM workflow" sap:VirtualizedContainerService.HintSize="957,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="Comunes\ConsultaDO_GRM.xaml">
                           <ui:InvokeWorkflowFile.Arguments>
                             <InArgument x:TypeArguments="x:String" x:Key="in_DO">[in_TransactionItem("DOCNROXX").ToString]</InArgument>
                             <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
@@ -2052,7 +2057,7 @@
                             <InArgument x:TypeArguments="x:String" x:Key="in_idSesion">[in_idSesion]</InArgument>
                           </ui:InvokeWorkflowFile.Arguments>
                         </ui:InvokeWorkflowFile>
-                        <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Rgistrar informacion Paso 1 y 2" sap:VirtualizedContainerService.HintSize="915,2305" sap2010:WorkflowViewState.IdRef="BrowserScope_6" InformativeScreenshot="5c019606b7f6782551c7838159769b1c" Selector="&lt;html app='chrome.exe' title='https://conexiongrm.repremundo.com.co/produccion/extgrapher/form*' /&gt;">
+                        <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Rgistrar informacion Paso 1 y 2" sap:VirtualizedContainerService.HintSize="957,2305" sap2010:WorkflowViewState.IdRef="BrowserScope_6" InformativeScreenshot="5c019606b7f6782551c7838159769b1c" Selector="&lt;html app='chrome.exe' title='https://conexiongrm.repremundo.com.co/produccion/extgrapher/form*' /&gt;">
                           <ui:BrowserScope.Body>
                             <ActivityAction x:TypeArguments="x:Object">
                               <ActivityAction.Argument>
@@ -2212,26 +2217,26 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                         </ui:BrowserScope>
-                        <Sequence DisplayName="Guardar" sap:VirtualizedContainerService.HintSize="915,1459" sap2010:WorkflowViewState.IdRef="Sequence_272">
+                        <Sequence DisplayName="Guardar" sap:VirtualizedContainerService.HintSize="957,2109" sap2010:WorkflowViewState.IdRef="Sequence_272">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Anexar navegador 'chrome.exe '" sap:VirtualizedContainerService.HintSize="873,1367" sap2010:WorkflowViewState.IdRef="BrowserScope_53" InformativeScreenshot="78da3054928ccdc1703343274eb4c149" Selector="&lt;html app='chrome.exe' title='https://conexiongrm.repremundo.com.co/produccion/extgrapher/form*' /&gt;">
+                          <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Anexar navegador 'chrome.exe '" sap:VirtualizedContainerService.HintSize="915,2017" sap2010:WorkflowViewState.IdRef="BrowserScope_53" InformativeScreenshot="78da3054928ccdc1703343274eb4c149" Selector="&lt;html app='chrome.exe' title='https://conexiongrm.repremundo.com.co/produccion/extgrapher/form*' /&gt;">
                             <ui:BrowserScope.Body>
                               <ActivityAction x:TypeArguments="x:Object">
                                 <ActivityAction.Argument>
                                   <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                                 </ActivityAction.Argument>
-                                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="839,1221" sap2010:WorkflowViewState.IdRef="Sequence_303">
+                                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="881,1871" sap2010:WorkflowViewState.IdRef="Sequence_303">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'TD'" sap:VirtualizedContainerService.HintSize="797,106" sap2010:WorkflowViewState.IdRef="Click_176" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                                  <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'TD'" sap:VirtualizedContainerService.HintSize="839,106" sap2010:WorkflowViewState.IdRef="Click_176" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
                                     <ui:Click.CursorPosition>
                                       <ui:CursorPosition Position="Center">
                                         <ui:CursorPosition.OffsetX>
@@ -2250,12 +2255,12 @@
                                       </ui:Target>
                                     </ui:Click.Target>
                                   </ui:Click>
-                                  <ui:UiElementExists DisplayName="Element Exists - Valida mensaje de guardado" Exists="[swBoton]" sap:VirtualizedContainerService.HintSize="797,106" sap2010:WorkflowViewState.IdRef="UiElementExists_47">
+                                  <ui:UiElementExists DisplayName="Element Exists - Valida mensaje de guardado" Exists="[swBoton]" sap:VirtualizedContainerService.HintSize="839,106" sap2010:WorkflowViewState.IdRef="UiElementExists_47">
                                     <ui:UiElementExists.Target>
                                       <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="ca90d0d94cb1b949fc5a7941c0719cd7" Selector="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='https://conexiongrm.repremundo.com.co/produccion/extgrapher/form*' /&gt;&lt;ctrl name='OK' role='push button' /&gt;" TimeoutMS="30000" WaitForReady="INTERACTIVE" />
                                     </ui:UiElementExists.Target>
                                   </ui:UiElementExists>
-                                  <If Condition="[swBoton]" DisplayName="Si - Acciones de guardado" sap:VirtualizedContainerService.HintSize="797,837" sap2010:WorkflowViewState.IdRef="If_60">
+                                  <If Condition="[swBoton]" DisplayName="Si - Acciones de guardado" sap:VirtualizedContainerService.HintSize="839,1487" sap2010:WorkflowViewState.IdRef="If_60">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -2263,13 +2268,13 @@
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                     <If.Then>
-                                      <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="376,690" sap2010:WorkflowViewState.IdRef="Sequence_273">
+                                      <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="418,1340" sap2010:WorkflowViewState.IdRef="Sequence_273">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                        <ui:Click DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="1000" DisplayName="Click - Ok en guardado" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_177" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                                        <ui:Click DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="1000" DisplayName="Click - Ok en guardado" sap:VirtualizedContainerService.HintSize="376,106" sap2010:WorkflowViewState.IdRef="Click_177" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
                                           <ui:Click.CursorPosition>
                                             <ui:CursorPosition Position="Center">
                                               <ui:CursorPosition.OffsetX>
@@ -2288,16 +2293,76 @@
                                             </ui:Target>
                                           </ui:Click.Target>
                                         </ui:Click>
-                                        <ui:AppendLine DisplayName="Registro Log" FileName="[in_Config(&quot;Log_Folder&quot;).ToString + in_nameLog]" sap:VirtualizedContainerService.HintSize="334,132" sap2010:WorkflowViewState.IdRef="AppendLine_55" Text="[&quot;DO: &quot; + in_TransactionItem(&quot;DOCNROXX&quot;).ToString + &quot;Registrado correctamente&quot;]" />
-                                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_51" Level="Info" Message="[&quot;DO: &quot; + in_TransactionItem(&quot;DOCNROXX&quot;).ToString + &quot;Registrado correctamente&quot;]" />
-                                        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke RegistrarLogBD workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_37" UnSafe="False" WorkflowFileName="Comunes\RegistrarLogBD.xaml">
+                                        <Sequence DisplayName="Reg Log MapCargo - Nada 1 y 2" sap:VirtualizedContainerService.HintSize="376,610" sap2010:WorkflowViewState.IdRef="Sequence_463">
+                                          <Sequence.Variables>
+                                            <Variable x:TypeArguments="x:String" Name="strFechaRegMap" />
+                                            <Variable x:TypeArguments="x:String" Name="strHoraRegMap" />
+                                          </Sequence.Variables>
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <ui:LogMessage DisplayName="Registrar mensaje" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_89" Level="Info" Message="[&quot;Log MapCargo...&quot;]" />
+                                          <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_142">
+                                            <Assign.To>
+                                              <OutArgument x:TypeArguments="x:String">[strFechaRegMap]</OutArgument>
+                                            </Assign.To>
+                                            <Assign.Value>
+                                              <InArgument x:TypeArguments="x:String">[Now.ToString( "yyyy-MM-dd" )]</InArgument>
+                                            </Assign.Value>
+                                          </Assign>
+                                          <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_143">
+                                            <Assign.To>
+                                              <OutArgument x:TypeArguments="x:String">[strHoraRegMap]</OutArgument>
+                                            </Assign.To>
+                                            <Assign.Value>
+                                              <InArgument x:TypeArguments="x:String">[Now.ToString( "hh:mm:ss" )]</InArgument>
+                                            </Assign.Value>
+                                          </Assign>
+                                          <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_141">
+                                            <Assign.To>
+                                              <OutArgument x:TypeArguments="x:String">[queryLogMap]</OutArgument>
+                                            </Assign.To>
+                                            <Assign.Value>
+                                              <InArgument x:TypeArguments="x:String">["INSERT INTO `MAPCARGO`.`SHMU2020` (`OPNUMREF`, `OPNUMMAN`, `OPDATARR`, `OPHORARR`, `OPDATDOW`, `OPHORDOW`, `REGUSRXX`, `REGFECXX`, `REGHORXX`, `REGUSRMX`, `REGFECMX`, `REGHORMX`, `REGESTXX`, `REGSTAMP`) VALUES ('" + in_TransactionItem("DOCTRIMP").ToString + "', '" + txtNumManifiesto + "', '" + txtFechaAvisoLlegada + "', '" + txtHoraAvisoLlegada + "', '" + txtFechaFinalizacion + "', '" + txtHoraFinalizacion + "', '" + in_Config("User_ConexionGRM").ToString + "', '" + strFechaRegMap + "', '" + strHoraRegMap + "', '" + in_Config("User_ConexionGRM").ToString + "', '" + strFechaRegMap + "', '" + strHoraRegMap + "', 'ACTIVO', CURRENT_TIMESTAMP)"]</InArgument>
+                                            </Assign.Value>
+                                          </Assign>
+                                          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke RegistrarLogBD_MAPCARGO workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_86" UnSafe="False" WorkflowFileName="Comunes\RegistrarLogBD_MAPCARGO.xaml">
+                                            <ui:InvokeWorkflowFile.Arguments>
+                                              <InArgument x:TypeArguments="x:String" x:Key="in_ConexDB">
+                                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;ConexionBD&quot;).ToString" />
+                                              </InArgument>
+                                              <InArgument x:TypeArguments="x:String" x:Key="in_Query">
+                                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="queryLogMap" />
+                                              </InArgument>
+                                              <OutArgument x:TypeArguments="x:Int32" x:Key="out_resQuery">
+                                                <mva:VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="resQuery" />
+                                              </OutArgument>
+                                            </ui:InvokeWorkflowFile.Arguments>
+                                          </ui:InvokeWorkflowFile>
+                                        </Sequence>
+                                        <ui:AppendLine DisplayName="Registro Log" FileName="[in_Config(&quot;Log_Folder&quot;).ToString + in_nameLog]" sap:VirtualizedContainerService.HintSize="376,132" sap2010:WorkflowViewState.IdRef="AppendLine_55" Text="[&quot;DO: &quot; + in_TransactionItem(&quot;DOCNROXX&quot;).ToString + &quot;Registrado correctamente&quot;]" />
+                                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="376,91" sap2010:WorkflowViewState.IdRef="LogMessage_51" Level="Info" Message="[&quot;DO: &quot; + in_TransactionItem(&quot;DOCNROXX&quot;).ToString + &quot;Registrado correctamente&quot;]" />
+                                        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke RegistrarLogBD workflow" sap:VirtualizedContainerService.HintSize="376,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_37" UnSafe="False" WorkflowFileName="Comunes\RegistrarLogBD.xaml">
                                           <ui:InvokeWorkflowFile.Arguments>
-                                            <InArgument x:TypeArguments="x:String" x:Key="in_conexDB">[in_Config("ConexionBD").ToString]</InArgument>
+                                            <InArgument x:TypeArguments="x:String" x:Key="in_conexDB">
+                                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;ConexionBD&quot;).ToString" />
+                                            </InArgument>
                                             <OutArgument x:TypeArguments="x:Int32" x:Key="out_estadoInsert" />
-                                            <InArgument x:TypeArguments="x:String" x:Key="in_DO">[in_TransactionItem("DOCNROXX").ToString]</InArgument>
-                                            <InArgument x:TypeArguments="x:String" x:Key="in_dsMensaje">[in_Config("EstadoDO_3").ToString]</InArgument>
-                                            <InArgument x:TypeArguments="x:String" x:Key="in_tipoMensaje">GUARDADO</InArgument>
-                                            <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
+                                            <InArgument x:TypeArguments="x:String" x:Key="in_DO">
+                                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_TransactionItem(&quot;DOCNROXX&quot;).ToString" />
+                                            </InArgument>
+                                            <InArgument x:TypeArguments="x:String" x:Key="in_dsMensaje">
+                                              <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;EstadoDO_3&quot;).ToString" />
+                                            </InArgument>
+                                            <InArgument x:TypeArguments="x:String" x:Key="in_tipoMensaje">
+                                              <Literal x:TypeArguments="x:String">GUARDADO</Literal>
+                                            </InArgument>
+                                            <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
+                                              <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="in_Config" />
+                                            </InArgument>
                                           </ui:InvokeWorkflowFile.Arguments>
                                         </ui:InvokeWorkflowFile>
                                         <ui:CloseTab Browser="{x:Null}" DisplayName="Cerrar pestaña" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="CloseTab_15" />
@@ -2358,7 +2423,7 @@
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser - Consultar Trafico GRM" sap:VirtualizedContainerService.HintSize="602,1067" sap2010:WorkflowViewState.IdRef="BrowserScope_10" InformativeScreenshot="4f66462209cfb74fc9048a5d291b9d0a" Selector="&lt;html app='chrome.exe' title='Filtros para la consulta' /&gt;">
+                                <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser - Consultar Trafico GRM" sap:VirtualizedContainerService.HintSize="634,1067" sap2010:WorkflowViewState.IdRef="BrowserScope_10" InformativeScreenshot="4f66462209cfb74fc9048a5d291b9d0a" Selector="&lt;html app='chrome.exe' title='Filtros para la consulta' /&gt;">
                                   <ui:BrowserScope.Body>
                                     <ActivityAction x:TypeArguments="x:Object">
                                       <ActivityAction.Argument>
@@ -2685,19 +2750,19 @@
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
                                 </ui:BrowserScope>
-                                <Sequence DisplayName="Obtener Fecha y Hora de proceso" sap:VirtualizedContainerService.HintSize="602,1557" sap2010:WorkflowViewState.IdRef="Sequence_50">
+                                <Sequence DisplayName="Obtener Fecha y Hora de proceso" sap:VirtualizedContainerService.HintSize="634,1968" sap2010:WorkflowViewState.IdRef="Sequence_50">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe DIAN'" sap:VirtualizedContainerService.HintSize="560,1465" sap2010:WorkflowViewState.IdRef="BrowserScope_11" InformativeScreenshot="302fe8c604bf1090279e986110abc72e" Selector="&lt;html app='chrome.exe' title='DIAN - MUISCA*' /&gt;">
+                                  <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe DIAN'" sap:VirtualizedContainerService.HintSize="592,1876" sap2010:WorkflowViewState.IdRef="BrowserScope_11" InformativeScreenshot="302fe8c604bf1090279e986110abc72e" Selector="&lt;html app='chrome.exe' title='DIAN - MUISCA*' /&gt;">
                                     <ui:BrowserScope.Body>
                                       <ActivityAction x:TypeArguments="x:Object">
                                         <ActivityAction.Argument>
                                           <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                                         </ActivityAction.Argument>
-                                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="526,1319" sap2010:WorkflowViewState.IdRef="Sequence_49">
+                                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="558,1730" sap2010:WorkflowViewState.IdRef="Sequence_49">
                                           <Sequence.Variables>
                                             <Variable x:TypeArguments="x:String" Name="txtFechaProcesoTemp" />
                                           </Sequence.Variables>
@@ -2706,7 +2771,7 @@
                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
-                                          <TryCatch DisplayName="Intentar capturar" sap:VirtualizedContainerService.HintSize="484,361" sap2010:WorkflowViewState.IdRef="TryCatch_9">
+                                          <TryCatch DisplayName="Intentar capturar" sap:VirtualizedContainerService.HintSize="516,772" sap2010:WorkflowViewState.IdRef="TryCatch_9">
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -2724,10 +2789,10 @@
                                               </ui:GetAttribute>
                                             </TryCatch.Try>
                                             <TryCatch.Catches>
-                                              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_9">
+                                              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="482,610" sap2010:WorkflowViewState.IdRef="Catch`1_9">
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
@@ -2735,7 +2800,7 @@
                                                   <ActivityAction.Argument>
                                                     <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                                                   </ActivityAction.Argument>
-                                                  <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="476,503" sap2010:WorkflowViewState.IdRef="Sequence_222">
+                                                  <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="476,541" sap2010:WorkflowViewState.IdRef="Sequence_222">
                                                     <sap:WorkflowViewStateService.ViewState>
                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -2774,7 +2839,7 @@
                                               </Catch>
                                             </TryCatch.Catches>
                                           </TryCatch>
-                                          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke TransformarFecha workflow" sap:VirtualizedContainerService.HintSize="484,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Comunes\TransformarFecha.xaml">
+                                          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke TransformarFecha workflow" sap:VirtualizedContainerService.HintSize="516,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Comunes\TransformarFecha.xaml">
                                             <ui:InvokeWorkflowFile.Arguments>
                                               <InArgument x:TypeArguments="x:String" x:Key="in_TxtFecha">[txtFechaProcesoTemp]</InArgument>
                                               <OutArgument x:TypeArguments="x:String" x:Key="out_FechaFormateada">[txtFechaProceso]</OutArgument>
@@ -2782,7 +2847,7 @@
                                               <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
                                             </ui:InvokeWorkflowFile.Arguments>
                                           </ui:InvokeWorkflowFile>
-                                          <If Condition="[txtHoraProceso.Equals(&quot;00:00:00&quot;)]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="484,207" sap2010:WorkflowViewState.IdRef="If_20">
+                                          <If Condition="[txtHoraProceso.Equals(&quot;00:00:00&quot;)]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="516,207" sap2010:WorkflowViewState.IdRef="If_20">
                                             <If.Then>
                                               <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_22">
                                                 <Assign.To>
@@ -4880,15 +4945,12 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                       <Sequence DisplayName="Registrar en GRM - 1" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_165">
-                        <Sequence.Variables>
-                          <Variable x:TypeArguments="x:Boolean" Name="swBoton" />
-                        </Sequence.Variables>
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke ConsultaDO_GRM workflow" sap:VirtualizedContainerService.HintSize="644,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="Comunes\ConsultaDO_GRM.xaml">
+                        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke ConsultaDO_GRM workflow" sap:VirtualizedContainerService.HintSize="1144,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="Comunes\ConsultaDO_GRM.xaml">
                           <ui:InvokeWorkflowFile.Arguments>
                             <InArgument x:TypeArguments="x:String" x:Key="in_DO">[in_TransactionItem("DOCNROXX").ToString]</InArgument>
                             <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
@@ -4896,7 +4958,7 @@
                             <InArgument x:TypeArguments="x:String" x:Key="in_idSesion">[in_idSesion]</InArgument>
                           </ui:InvokeWorkflowFile.Arguments>
                         </ui:InvokeWorkflowFile>
-                        <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Rgistrar informacion Paso 1" sap:VirtualizedContainerService.HintSize="644,1865" sap2010:WorkflowViewState.IdRef="BrowserScope_48" InformativeScreenshot="5c019606b7f6782551c7838159769b1c" Selector="&lt;html app='chrome.exe' title='https://conexiongrm.repremundo.com.co/produccion/extgrapher/form*' /&gt;">
+                        <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Rgistrar informacion Paso 1" sap:VirtualizedContainerService.HintSize="1144,1865" sap2010:WorkflowViewState.IdRef="BrowserScope_48" InformativeScreenshot="5c019606b7f6782551c7838159769b1c" Selector="&lt;html app='chrome.exe' title='https://conexiongrm.repremundo.com.co/produccion/extgrapher/form*' /&gt;">
                           <ui:BrowserScope.Body>
                             <ActivityAction x:TypeArguments="x:Object">
                               <ActivityAction.Argument>
@@ -5030,26 +5092,26 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                         </ui:BrowserScope>
-                        <Sequence DisplayName="Guardar" sap:VirtualizedContainerService.HintSize="644,66" sap2010:WorkflowViewState.IdRef="Sequence_280">
+                        <Sequence DisplayName="Guardar" sap:VirtualizedContainerService.HintSize="1144,2054" sap2010:WorkflowViewState.IdRef="Sequence_280">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Anexar navegador 'chrome.exe '" sap:VirtualizedContainerService.HintSize="873,1312" sap2010:WorkflowViewState.IdRef="BrowserScope_54" InformativeScreenshot="58af9332dd8922cd56ce9a879229fab3" Selector="&lt;html app='chrome.exe' title='https://conexiongrm.repremundo.com.co/produccion/extgrapher/form*' /&gt;">
+                          <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Anexar navegador 'chrome.exe '" sap:VirtualizedContainerService.HintSize="1102,1962" sap2010:WorkflowViewState.IdRef="BrowserScope_54" InformativeScreenshot="58af9332dd8922cd56ce9a879229fab3" Selector="&lt;html app='chrome.exe' title='https://conexiongrm.repremundo.com.co/produccion/extgrapher/form*' /&gt;">
                             <ui:BrowserScope.Body>
                               <ActivityAction x:TypeArguments="x:Object">
                                 <ActivityAction.Argument>
                                   <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                                 </ActivityAction.Argument>
-                                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="839,1166" sap2010:WorkflowViewState.IdRef="Sequence_304">
+                                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1068,1816" sap2010:WorkflowViewState.IdRef="Sequence_304">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'TD'" sap:VirtualizedContainerService.HintSize="797,106" sap2010:WorkflowViewState.IdRef="Click_179" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                                  <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'TD'" sap:VirtualizedContainerService.HintSize="1026,106" sap2010:WorkflowViewState.IdRef="Click_179" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
                                     <ui:Click.CursorPosition>
                                       <ui:CursorPosition Position="Center">
                                         <ui:CursorPosition.OffsetX>
@@ -5068,7 +5130,7 @@
                                       </ui:Target>
                                     </ui:Click.Target>
                                   </ui:Click>
-                                  <ui:UiElementExists DisplayName="Element Exists - Valida mensaje de guardado" Exists="[swBoton]" sap:VirtualizedContainerService.HintSize="797,51" sap2010:WorkflowViewState.IdRef="UiElementExists_48">
+                                  <ui:UiElementExists DisplayName="Element Exists - Valida mensaje de guardado" Exists="[swBoton]" sap:VirtualizedContainerService.HintSize="1026,51" sap2010:WorkflowViewState.IdRef="UiElementExists_48">
                                     <ui:UiElementExists.Target>
                                       <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="ca90d0d94cb1b949fc5a7941c0719cd7" Selector="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='https://conexiongrm.repremundo.com.co/produccion/extgrapher/form*' /&gt;&lt;ctrl name='OK' role='push button' /&gt;" TimeoutMS="30000" WaitForReady="INTERACTIVE" />
                                     </ui:UiElementExists.Target>
@@ -5079,7 +5141,7 @@
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                   </ui:UiElementExists>
-                                  <If Condition="[swBoton]" DisplayName="Si - Acciones de guardado" sap:VirtualizedContainerService.HintSize="797,837" sap2010:WorkflowViewState.IdRef="If_62">
+                                  <If Condition="[swBoton]" DisplayName="Si - Acciones de guardado" sap:VirtualizedContainerService.HintSize="1026,1487" sap2010:WorkflowViewState.IdRef="If_62">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -5087,13 +5149,13 @@
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                     <If.Then>
-                                      <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="376,690" sap2010:WorkflowViewState.IdRef="Sequence_278">
+                                      <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="605,1340" sap2010:WorkflowViewState.IdRef="Sequence_278">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                        <ui:Click DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="1000" DisplayName="Click 'TH'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_180" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                                        <ui:Click DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="1000" DisplayName="Click 'TH'" sap:VirtualizedContainerService.HintSize="563,106" sap2010:WorkflowViewState.IdRef="Click_180" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
                                           <ui:Click.CursorPosition>
                                             <ui:CursorPosition Position="Center">
                                               <ui:CursorPosition.OffsetX>
@@ -5112,9 +5174,55 @@
                                             </ui:Target>
                                           </ui:Click.Target>
                                         </ui:Click>
-                                        <ui:AppendLine DisplayName="Registro Log" FileName="[in_Config(&quot;Log_Folder&quot;).ToString + in_nameLog]" sap:VirtualizedContainerService.HintSize="334,132" sap2010:WorkflowViewState.IdRef="AppendLine_57" Text="[&quot;DO: &quot; + in_TransactionItem(&quot;DOCNROXX&quot;).ToString + &quot;Registrado correctamente&quot;]" />
-                                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_52" Level="Info" Message="[&quot;DO: &quot; + in_TransactionItem(&quot;DOCNROXX&quot;).ToString + &quot;Registrado correctamente&quot;]" />
-                                        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke RegistrarLogBD workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_39" UnSafe="False" WorkflowFileName="Comunes\RegistrarLogBD.xaml">
+                                        <Sequence DisplayName="Reg Log MapCargo - Nada 1" sap:VirtualizedContainerService.HintSize="563,610" sap2010:WorkflowViewState.IdRef="Sequence_464">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <ui:LogMessage DisplayName="Registrar mensaje" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_90" Level="Info" Message="[&quot;Log MapCargo...&quot;]" />
+                                          <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_144">
+                                            <Assign.To>
+                                              <OutArgument x:TypeArguments="x:String">[strFechaRegMap]</OutArgument>
+                                            </Assign.To>
+                                            <Assign.Value>
+                                              <InArgument x:TypeArguments="x:String">[Now.ToString( "yyyy-MM-dd" )]</InArgument>
+                                            </Assign.Value>
+                                          </Assign>
+                                          <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_145">
+                                            <Assign.To>
+                                              <OutArgument x:TypeArguments="x:String">[strHoraRegMap]</OutArgument>
+                                            </Assign.To>
+                                            <Assign.Value>
+                                              <InArgument x:TypeArguments="x:String">[Now.ToString( "hh:mm:ss" )]</InArgument>
+                                            </Assign.Value>
+                                          </Assign>
+                                          <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_146">
+                                            <Assign.To>
+                                              <OutArgument x:TypeArguments="x:String">[queryLogMap]</OutArgument>
+                                            </Assign.To>
+                                            <Assign.Value>
+                                              <InArgument x:TypeArguments="x:String">["INSERT INTO `MAPCARGO`.`SHMU2020` (`OPNUMREF`, `OPNUMMAN`, `OPDATARR`, `OPHORARR`, `REGUSRXX`, `REGFECXX`, `REGHORXX`, `REGUSRMX`, `REGFECMX`, `REGHORMX`, `REGESTXX`, `REGSTAMP`) VALUES ('" + in_TransactionItem("DOCTRIMP").ToString + "', '" + txtNumManifiesto + "', '" + txtFechaAvisoLlegada + "', '" + txtHoraAvisoLlegada + "', '" + in_Config("User_ConexionGRM").ToString + "', '" + strFechaRegMap + "', '" + strHoraRegMap + "', '" + in_Config("User_ConexionGRM").ToString + "', '" + strFechaRegMap + "', '" + strHoraRegMap + "', 'ACTIVO', CURRENT_TIMESTAMP)"]</InArgument>
+                                            </Assign.Value>
+                                          </Assign>
+                                          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke RegistrarLogBD_MAPCARGO workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_87" UnSafe="False" WorkflowFileName="Comunes\RegistrarLogBD_MAPCARGO.xaml">
+                                            <ui:InvokeWorkflowFile.Arguments>
+                                              <InArgument x:TypeArguments="x:String" x:Key="in_ConexDB">
+                                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;ConexionBD&quot;).ToString" />
+                                              </InArgument>
+                                              <InArgument x:TypeArguments="x:String" x:Key="in_Query">
+                                                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="queryLogMap" />
+                                              </InArgument>
+                                              <OutArgument x:TypeArguments="x:Int32" x:Key="out_resQuery">
+                                                <mva:VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="resQuery" />
+                                              </OutArgument>
+                                            </ui:InvokeWorkflowFile.Arguments>
+                                          </ui:InvokeWorkflowFile>
+                                        </Sequence>
+                                        <ui:AppendLine DisplayName="Registro Log" FileName="[in_Config(&quot;Log_Folder&quot;).ToString + in_nameLog]" sap:VirtualizedContainerService.HintSize="563,132" sap2010:WorkflowViewState.IdRef="AppendLine_57" Text="[&quot;DO: &quot; + in_TransactionItem(&quot;DOCNROXX&quot;).ToString + &quot;Registrado correctamente&quot;]" />
+                                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="563,91" sap2010:WorkflowViewState.IdRef="LogMessage_52" Level="Info" Message="[&quot;DO: &quot; + in_TransactionItem(&quot;DOCNROXX&quot;).ToString + &quot;Registrado correctamente&quot;]" />
+                                        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke RegistrarLogBD workflow" sap:VirtualizedContainerService.HintSize="563,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_39" UnSafe="False" WorkflowFileName="Comunes\RegistrarLogBD.xaml">
                                           <ui:InvokeWorkflowFile.Arguments>
                                             <InArgument x:TypeArguments="x:String" x:Key="in_conexDB">[in_Config("ConexionBD").ToString]</InArgument>
                                             <OutArgument x:TypeArguments="x:Int32" x:Key="out_estadoInsert" />
@@ -5124,7 +5232,7 @@
                                             <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
                                           </ui:InvokeWorkflowFile.Arguments>
                                         </ui:InvokeWorkflowFile>
-                                        <ui:CloseTab Browser="{x:Null}" DisplayName="Cerrar pestaña" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="CloseTab_19" />
+                                        <ui:CloseTab Browser="{x:Null}" DisplayName="Cerrar pestaña" sap:VirtualizedContainerService.HintSize="563,22" sap2010:WorkflowViewState.IdRef="CloseTab_19" />
                                       </Sequence>
                                     </If.Then>
                                     <If.Else>
@@ -5514,7 +5622,9 @@
                                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <While.Condition>[i &lt; ExtractDataTable.Rows.Count]</While.Condition>
+                                  <While.Condition>
+                                    <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="i &lt; ExtractDataTable.Rows.Count" sap2010:WorkflowViewState.IdRef="VisualBasicValue`1_1" />
+                                  </While.Condition>
                                   <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="882,1787" sap2010:WorkflowViewState.IdRef="Sequence_331">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -5798,7 +5908,7 @@
                               <av:PointCollection x:Key="ConnectorLocation">400,533 400,683.04 150,683.04 150,806.5</av:PointCollection>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <Sequence DisplayName="Registrar en GRM - 2" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_192">
+                          <Sequence DisplayName="Registrar en GRM - 2" sap:VirtualizedContainerService.HintSize="1186,3503" sap2010:WorkflowViewState.IdRef="Sequence_192">
                             <Sequence.Variables>
                               <Variable x:TypeArguments="x:Boolean" Name="swBoton" />
                             </Sequence.Variables>
@@ -5807,7 +5917,7 @@
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke ConsultaDO_GRM workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_11" UnSafe="False" WorkflowFileName="Comunes\ConsultaDO_GRM.xaml">
+                            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke ConsultaDO_GRM workflow" sap:VirtualizedContainerService.HintSize="1144,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_11" UnSafe="False" WorkflowFileName="Comunes\ConsultaDO_GRM.xaml">
                               <ui:InvokeWorkflowFile.Arguments>
                                 <InArgument x:TypeArguments="x:String" x:Key="in_DO">[in_TransactionItem("DOCNROXX").ToString]</InArgument>
                                 <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
@@ -5815,7 +5925,7 @@
                                 <InArgument x:TypeArguments="x:String" x:Key="in_idSesion">[in_idSesion]</InArgument>
                               </ui:InvokeWorkflowFile.Arguments>
                             </ui:InvokeWorkflowFile>
-                            <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Rgistrar informacion Paso 2" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="BrowserScope_49" InformativeScreenshot="5c019606b7f6782551c7838159769b1c" Selector="&lt;html app='chrome.exe' title='https://conexiongrm.repremundo.com.co/produccion/extgrapher/form*' /&gt;">
+                            <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Rgistrar informacion Paso 2" sap:VirtualizedContainerService.HintSize="1144,638" sap2010:WorkflowViewState.IdRef="BrowserScope_49" InformativeScreenshot="5c019606b7f6782551c7838159769b1c" Selector="&lt;html app='chrome.exe' title='https://conexiongrm.repremundo.com.co/produccion/extgrapher/form*' /&gt;">
                               <ui:BrowserScope.Body>
                                 <ActivityAction x:TypeArguments="x:Object">
                                   <ActivityAction.Argument>
@@ -5859,31 +5969,31 @@
                               </ui:BrowserScope.Body>
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                             </ui:BrowserScope>
-                            <Sequence DisplayName="Guardar" sap:VirtualizedContainerService.HintSize="334,66" sap2010:WorkflowViewState.IdRef="Sequence_287">
+                            <Sequence DisplayName="Guardar" sap:VirtualizedContainerService.HintSize="1144,2606" sap2010:WorkflowViewState.IdRef="Sequence_287">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Anexar navegador 'chrome.exe '" sap:VirtualizedContainerService.HintSize="873,1367" sap2010:WorkflowViewState.IdRef="BrowserScope_55" InformativeScreenshot="626a523ad63037d6a82f05a5404ca0bc" Selector="&lt;html app='chrome.exe' title='https://conexiongrm.repremundo.com.co/produccion/extgrapher/form*' /&gt;">
+                              <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Anexar navegador 'chrome.exe '" sap:VirtualizedContainerService.HintSize="1102,2514" sap2010:WorkflowViewState.IdRef="BrowserScope_55" InformativeScreenshot="626a523ad63037d6a82f05a5404ca0bc" Selector="&lt;html app='chrome.exe' title='https://conexiongrm.repremundo.com.co/produccion/extgrapher/form*' /&gt;">
                                 <ui:BrowserScope.Body>
                                   <ActivityAction x:TypeArguments="x:Object">
                                     <ActivityAction.Argument>
                                       <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                                     </ActivityAction.Argument>
-                                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="839,1221" sap2010:WorkflowViewState.IdRef="Sequence_305">
+                                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1068,2368" sap2010:WorkflowViewState.IdRef="Sequence_305">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'TD'" sap:VirtualizedContainerService.HintSize="797,106" sap2010:WorkflowViewState.IdRef="Click_182" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                                      <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'TD'" sap:VirtualizedContainerService.HintSize="1026,106" sap2010:WorkflowViewState.IdRef="Click_182" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
                                         <ui:Click.CursorPosition>
                                           <ui:CursorPosition Position="Center">
                                             <ui:CursorPosition.OffsetX>
@@ -5902,12 +6012,12 @@
                                           </ui:Target>
                                         </ui:Click.Target>
                                       </ui:Click>
-                                      <ui:UiElementExists DisplayName="Element Exists - Valida mensaje de guardado" Exists="[swBoton]" sap:VirtualizedContainerService.HintSize="797,106" sap2010:WorkflowViewState.IdRef="UiElementExists_49">
+                                      <ui:UiElementExists DisplayName="Element Exists - Valida mensaje de guardado" Exists="[swBoton]" sap:VirtualizedContainerService.HintSize="1026,106" sap2010:WorkflowViewState.IdRef="UiElementExists_49">
                                         <ui:UiElementExists.Target>
                                           <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="ca90d0d94cb1b949fc5a7941c0719cd7" Selector="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='https://conexiongrm.repremundo.com.co/produccion/extgrapher/form*' /&gt;&lt;ctrl name='OK' role='push button' /&gt;" TimeoutMS="30000" WaitForReady="INTERACTIVE" />
                                         </ui:UiElementExists.Target>
                                       </ui:UiElementExists>
-                                      <If Condition="[swBoton]" DisplayName="Si - Acciones de guardado" sap:VirtualizedContainerService.HintSize="797,837" sap2010:WorkflowViewState.IdRef="If_64">
+                                      <If Condition="[swBoton]" DisplayName="Si - Acciones de guardado" sap:VirtualizedContainerService.HintSize="1026,1984" sap2010:WorkflowViewState.IdRef="If_64">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -5915,13 +6025,13 @@
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
                                         <If.Then>
-                                          <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="376,690" sap2010:WorkflowViewState.IdRef="Sequence_285">
+                                          <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="605,1837" sap2010:WorkflowViewState.IdRef="Sequence_285">
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
-                                            <ui:Click DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="1000" DisplayName="Click 'TH'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_183" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                                            <ui:Click DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="1000" DisplayName="Click 'TH'" sap:VirtualizedContainerService.HintSize="563,106" sap2010:WorkflowViewState.IdRef="Click_183" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
                                               <ui:Click.CursorPosition>
                                                 <ui:CursorPosition Position="Center">
                                                   <ui:CursorPosition.OffsetX>
@@ -5940,9 +6050,92 @@
                                                 </ui:Target>
                                               </ui:Click.Target>
                                             </ui:Click>
-                                            <ui:AppendLine DisplayName="Registro Log" FileName="[in_Config(&quot;Log_Folder&quot;).ToString + in_nameLog]" sap:VirtualizedContainerService.HintSize="334,132" sap2010:WorkflowViewState.IdRef="AppendLine_59" Text="[&quot;DO: &quot; + in_TransactionItem(&quot;DOCNROXX&quot;).ToString + &quot;Registrado correctamente&quot;]" />
-                                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_53" Level="Info" Message="[&quot;DO: &quot; + in_TransactionItem(&quot;DOCNROXX&quot;).ToString + &quot;Registrado correctamente&quot;]" />
-                                            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke RegistrarLogBD workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_41" UnSafe="False" WorkflowFileName="Comunes\RegistrarLogBD.xaml">
+                                            <Sequence DisplayName="Reg Log MapCargo - Nada 1 y 2" sap:VirtualizedContainerService.HintSize="563,1107" sap2010:WorkflowViewState.IdRef="Sequence_465">
+                                              <Sequence.Variables>
+                                                <Variable x:TypeArguments="x:String" Name="strFechaRegMap" />
+                                                <Variable x:TypeArguments="x:String" Name="strHoraRegMap" />
+                                              </Sequence.Variables>
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                              <ui:LogMessage DisplayName="Registrar mensaje" sap:VirtualizedContainerService.HintSize="521,91" sap2010:WorkflowViewState.IdRef="LogMessage_91" Level="Info" Message="[&quot;Log MapCargo...&quot;]" />
+                                              <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="521,60" sap2010:WorkflowViewState.IdRef="Assign_147">
+                                                <Assign.To>
+                                                  <OutArgument x:TypeArguments="x:String">[strFechaRegMap]</OutArgument>
+                                                </Assign.To>
+                                                <Assign.Value>
+                                                  <InArgument x:TypeArguments="x:String">[Now.ToString( "yyyy-MM-dd" )]</InArgument>
+                                                </Assign.Value>
+                                              </Assign>
+                                              <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="521,60" sap2010:WorkflowViewState.IdRef="Assign_148">
+                                                <Assign.To>
+                                                  <OutArgument x:TypeArguments="x:String">[strHoraRegMap]</OutArgument>
+                                                </Assign.To>
+                                                <Assign.Value>
+                                                  <InArgument x:TypeArguments="x:String">[Now.ToString( "hh:mm:ss" )]</InArgument>
+                                                </Assign.Value>
+                                              </Assign>
+                                              <Assign sap:VirtualizedContainerService.HintSize="521,60" sap2010:WorkflowViewState.IdRef="Assign_149">
+                                                <Assign.To>
+                                                  <OutArgument x:TypeArguments="x:String">[queryLogMap]</OutArgument>
+                                                </Assign.To>
+                                                <Assign.Value>
+                                                  <InArgument x:TypeArguments="x:String">["UPDATE `MAPCARGO`.`SHMU2020` SET `OPDATDOW` = '" + txtFechaFinalizacion + "', `OPHORDOW` = '" + txtHoraFinalizacion + "', `REGFECMX` = '" + strFechaRegMap + "', `REGHORMX` = '" + strHoraRegMap + "', `REGSTAMP` = CURRENT_TIMESTAMP WHERE `SHMU2020`.`OPNUMREF` = '" + in_TransactionItem("DOCTRIMP").ToString + "';"]</InArgument>
+                                                </Assign.Value>
+                                              </Assign>
+                                              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke RegistrarLogBD_MAPCARGO workflow" sap:VirtualizedContainerService.HintSize="521,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_88" UnSafe="False" WorkflowFileName="Comunes\RegistrarLogBD_MAPCARGO.xaml">
+                                                <ui:InvokeWorkflowFile.Arguments>
+                                                  <InArgument x:TypeArguments="x:String" x:Key="in_ConexDB">
+                                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;ConexionBD&quot;).ToString" />
+                                                  </InArgument>
+                                                  <InArgument x:TypeArguments="x:String" x:Key="in_Query">
+                                                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="queryLogMap" />
+                                                  </InArgument>
+                                                  <OutArgument x:TypeArguments="x:Int32" x:Key="out_resQuery">
+                                                    <mva:VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="resQuery" />
+                                                  </OutArgument>
+                                                </ui:InvokeWorkflowFile.Arguments>
+                                              </ui:InvokeWorkflowFile>
+                                              <If Condition="[resQuery = 0]" sap:VirtualizedContainerService.HintSize="521,457" sap2010:WorkflowViewState.IdRef="If_110">
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                  </scg:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
+                                                <If.Then>
+                                                  <Sequence sap2010:Annotation.AnnotationText="Inserta reistro nuevo con Log MapCargo" sap:VirtualizedContainerService.HintSize="376,310" sap2010:WorkflowViewState.IdRef="Sequence_466">
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                    <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_150">
+                                                      <Assign.To>
+                                                        <OutArgument x:TypeArguments="x:String">[queryLogMap]</OutArgument>
+                                                      </Assign.To>
+                                                      <Assign.Value>
+                                                        <InArgument x:TypeArguments="x:String">["INSERT INTO `MAPCARGO`.`SHMU2020` (`OPNUMREF`, `OPNUMMAN`, `OPDATDOW`, `OPHORDOW`, `REGUSRXX`, `REGFECXX`, `REGHORXX`, `REGUSRMX`, `REGFECMX`, `REGHORMX`, `REGESTXX`, `REGSTAMP`) VALUES ('" + in_TransactionItem("DOCTRIMP").ToString + "', '" + txtNumManifiesto + "', '" + txtFechaFinalizacion + "', '" + txtHoraFinalizacion + "', '" + in_Config("User_ConexionGRM").ToString + "', '" + strFechaRegMap + "', '" + strHoraRegMap + "', '" + in_Config("User_ConexionGRM").ToString + "', '" + strFechaRegMap + "', '" + strHoraRegMap + "', 'ACTIVO', CURRENT_TIMESTAMP)"]</InArgument>
+                                                      </Assign.Value>
+                                                    </Assign>
+                                                    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke RegistrarLogBD_MAPCARGO workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_89" UnSafe="False" WorkflowFileName="Comunes\RegistrarLogBD_MAPCARGO.xaml">
+                                                      <ui:InvokeWorkflowFile.Arguments>
+                                                        <InArgument x:TypeArguments="x:String" x:Key="in_ConexDB">[in_Config("ConexionBD").ToString]</InArgument>
+                                                        <InArgument x:TypeArguments="x:String" x:Key="in_Query">[queryLogMap]</InArgument>
+                                                        <OutArgument x:TypeArguments="x:Int32" x:Key="out_resQuery">[resQuery]</OutArgument>
+                                                      </ui:InvokeWorkflowFile.Arguments>
+                                                    </ui:InvokeWorkflowFile>
+                                                  </Sequence>
+                                                </If.Then>
+                                              </If>
+                                            </Sequence>
+                                            <ui:AppendLine DisplayName="Registro Log" FileName="[in_Config(&quot;Log_Folder&quot;).ToString + in_nameLog]" sap:VirtualizedContainerService.HintSize="563,132" sap2010:WorkflowViewState.IdRef="AppendLine_59" Text="[&quot;DO: &quot; + in_TransactionItem(&quot;DOCNROXX&quot;).ToString + &quot;Registrado correctamente&quot;]" />
+                                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="563,91" sap2010:WorkflowViewState.IdRef="LogMessage_53" Level="Info" Message="[&quot;DO: &quot; + in_TransactionItem(&quot;DOCNROXX&quot;).ToString + &quot;Registrado correctamente&quot;]" />
+                                            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke RegistrarLogBD workflow" sap:VirtualizedContainerService.HintSize="563,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_41" UnSafe="False" WorkflowFileName="Comunes\RegistrarLogBD.xaml">
                                               <ui:InvokeWorkflowFile.Arguments>
                                                 <InArgument x:TypeArguments="x:String" x:Key="in_conexDB">[in_Config("ConexionBD").ToString]</InArgument>
                                                 <OutArgument x:TypeArguments="x:Int32" x:Key="out_estadoInsert" />
@@ -5952,7 +6145,7 @@
                                                 <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
                                               </ui:InvokeWorkflowFile.Arguments>
                                             </ui:InvokeWorkflowFile>
-                                            <ui:CloseTab Browser="{x:Null}" DisplayName="Cerrar pestaña" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="CloseTab_21" />
+                                            <ui:CloseTab Browser="{x:Null}" DisplayName="Cerrar pestaña" sap:VirtualizedContainerService.HintSize="563,22" sap2010:WorkflowViewState.IdRef="CloseTab_21" />
                                           </Sequence>
                                         </If.Then>
                                         <If.Else>

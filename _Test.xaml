@@ -54,10 +54,9 @@
       <AssemblyReference>UiPath.CV</AssemblyReference>
       <AssemblyReference>Newtonsoft.Json</AssemblyReference>
       <AssemblyReference>System.Data.Entity</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="_Test" sap:VirtualizedContainerService.HintSize="478,558" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="_Test" sap:VirtualizedContainerService.HintSize="596,644" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:Dictionary(x:String, x:Object)" Name="Config" />
       <Variable x:TypeArguments="x:String" Default="SIEMENS SAS" Name="varConsignatario" />
@@ -80,117 +79,40 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="436,221" sap2010:WorkflowViewState.IdRef="CommentOut_1">
-      <ui:CommentOut.Body>
-        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="242,143" sap2010:WorkflowViewState.IdRef="Sequence_6">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-          <Pick DisplayName="Seleccionar - Validar existe documento" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="Pick_1">
+    <Sequence DisplayName="Leer campos Map" sap:VirtualizedContainerService.HintSize="554,453" sap2010:WorkflowViewState.IdRef="Sequence_9">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="512,361" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+        <ui:CommentOut.Body>
+          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="476,283" sap2010:WorkflowViewState.IdRef="Sequence_8">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <PickBranch sap:VirtualizedContainerService.HintSize="384,456" sap2010:WorkflowViewState.IdRef="PickBranch_1">
-              <PickBranch.Trigger>
-                <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find Element 'SPAN'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_1">
-                  <ui:WaitUiElementAppear.Target>
-                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="748e51308c5be2c22ca981a04c9fe2c0" Selector="&lt;webctrl aaname='Reporte documentos declarantes' parentname='JR_PAGE_ANCHOR_0_1' tag='SPAN' /&gt;">
-                      <ui:Target.TimeoutMS>
-                        <InArgument x:TypeArguments="x:Int32" />
-                      </ui:Target.TimeoutMS>
-                      <ui:Target.WaitForReady>
-                        <InArgument x:TypeArguments="ui:WaitForReady" />
-                      </ui:Target.WaitForReady>
-                    </ui:Target>
-                  </ui:WaitUiElementAppear.Target>
-                </ui:WaitUiElementAppear>
-              </PickBranch.Trigger>
-              <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_1">
-                <Assign.To>
-                  <OutArgument x:TypeArguments="x:Boolean">[swDocExist]</OutArgument>
-                </Assign.To>
-                <Assign.Value>
-                  <InArgument x:TypeArguments="x:Boolean">True</InArgument>
-                </Assign.Value>
-              </Assign>
-            </PickBranch>
-            <PickBranch sap:VirtualizedContainerService.HintSize="426,456" sap2010:WorkflowViewState.IdRef="PickBranch_2">
-              <PickBranch.Trigger>
-                <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="376,198" sap2010:WorkflowViewState.IdRef="Sequence_4">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <ui:WaitUiElementAppear FoundElement="{x:Null}" DisplayName="Find Element - Error 1" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_2" WaitActive="False" WaitVisible="False">
-                    <ui:WaitUiElementAppear.Target>
-                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="f0ebff9496ca7d60f15e69092cee106e" Selector="&lt;html app='chrome.exe' title='DIAN - MUISCA - INTELIGENCIA CORPORATIVA' /&gt;&lt;webctrl tag='TD' aaname='Este reporte no ha encontrado datos para mostrar con los parametros especificados.' /&gt;" WaitForReady="INTERACTIVE">
-                        <ui:Target.TimeoutMS>
-                          <InArgument x:TypeArguments="x:Int32" />
-                        </ui:Target.TimeoutMS>
-                      </ui:Target>
-                    </ui:WaitUiElementAppear.Target>
-                  </ui:WaitUiElementAppear>
-                </Sequence>
-              </PickBranch.Trigger>
-              <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_2">
-                <Assign.To>
-                  <OutArgument x:TypeArguments="x:Boolean">[swDocExist]</OutArgument>
-                </Assign.To>
-                <Assign.Value>
-                  <InArgument x:TypeArguments="x:Boolean">False</InArgument>
-                </Assign.Value>
-              </Assign>
-            </PickBranch>
-            <PickBranch sap:VirtualizedContainerService.HintSize="426,456" sap2010:WorkflowViewState.IdRef="PickBranch_3">
-              <PickBranch.Trigger>
-                <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="376,198" sap2010:WorkflowViewState.IdRef="Sequence_5">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <ui:WaitUiElementAppear FoundElement="{x:Null}" DisplayName="Find Element - Error 2" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_3" WaitActive="False" WaitVisible="False">
-                    <ui:WaitUiElementAppear.Target>
-                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="2ae7fa8eca166d0280f7df254fe31f4c" Selector="&lt;html app='chrome.exe' title='DIAN - MUISCA*' /&gt;&lt;webctrl css-selector='body&amp;gt;table&amp;gt;tbody&amp;gt;tr&amp;gt;td&amp;gt;table&amp;gt;tbody&amp;gt;tr&amp;gt;td&amp;gt;table' tag='TABLE' /&gt;&lt;webctrl isleaf='1' tableRow='2' tag='TD' /&gt;" WaitForReady="INTERACTIVE">
-                        <ui:Target.TimeoutMS>
-                          <InArgument x:TypeArguments="x:Int32" />
-                        </ui:Target.TimeoutMS>
-                      </ui:Target>
-                    </ui:WaitUiElementAppear.Target>
-                  </ui:WaitUiElementAppear>
-                </Sequence>
-              </PickBranch.Trigger>
-              <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_3">
-                <Assign.To>
-                  <OutArgument x:TypeArguments="x:Boolean">[swDocExist]</OutArgument>
-                </Assign.To>
-                <Assign.Value>
-                  <InArgument x:TypeArguments="x:Boolean">False</InArgument>
-                </Assign.Value>
-              </Assign>
-            </PickBranch>
-          </Pick>
-        </Sequence>
-      </ui:CommentOut.Body>
-    </ui:CommentOut>
-    <ui:UiElementExists DisplayName="Element Exists 'TD'" Exists="[swDocExist]" sap:VirtualizedContainerService.HintSize="436,106" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
-      <ui:UiElementExists.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="e15805b1a22d81e548783f62cc71938a" Selector="&lt;html app='chrome.exe' title='DIAN - MUISCA - INTELIGENCIA CORPORATIVA' /&gt;&lt;webctrl tag='TABLE' idx='5' /&gt;&lt;webctrl isleaf='1' tableRow='2' tag='TD' aaname='Usuario' /&gt;">
-          <ui:Target.TimeoutMS>
-            <InArgument x:TypeArguments="x:Int32" />
-          </ui:Target.TimeoutMS>
-          <ui:Target.WaitForReady>
-            <InArgument x:TypeArguments="ui:WaitForReady" />
-          </ui:Target.WaitForReady>
-        </ui:Target>
-      </ui:UiElementExists.Target>
-    </ui:UiElementExists>
-    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="436,59" sap2010:WorkflowViewState.IdRef="MessageBox_37" Text="[&quot;Ok &gt;&gt;&gt; &quot; + swDocExist.ToString]" TopMost="True" />
+            <ui:BrowserScope Browser="{x:Null}" BrowserType="{x:Null}" SearchScope="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" DisplayName="Attach Browser" sap:VirtualizedContainerService.HintSize="434,191" sap2010:WorkflowViewState.IdRef="BrowserScope_1">
+              <ui:BrowserScope.Body>
+                <ActivityAction x:TypeArguments="x:Object">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="200,83" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </Sequence>
+                </ActivityAction>
+              </ui:BrowserScope.Body>
+            </ui:BrowserScope>
+          </Sequence>
+        </ui:CommentOut.Body>
+      </ui:CommentOut>
+    </Sequence>
+    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="554,59" sap2010:WorkflowViewState.IdRef="MessageBox_37" Text="[&quot;Ok &gt;&gt;&gt; &quot; + swDocExist.ToString]" TopMost="True" />
   </Sequence>
 </Activity>
