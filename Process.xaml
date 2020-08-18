@@ -171,7 +171,7 @@
                   <av:PointCollection x:Key="ConnectorLocation">100,283 100,326.5</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Sequence DisplayName="Consultar Sin Fecha Real - Nada" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_33">
+              <Sequence DisplayName="Consultar Sin Fecha Real - Nada" sap:VirtualizedContainerService.HintSize="1641,2641" sap2010:WorkflowViewState.IdRef="Sequence_33">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -541,7 +541,7 @@
                                           <av:PointCollection x:Key="ConnectorLocation">100,914 100,1077</av:PointCollection>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <Sequence sap2010:Annotation.AnnotationText="Se toman valares de la segunda fila" DisplayName="Inactivo mismo BL" sap:VirtualizedContainerService.HintSize="200,108" sap2010:WorkflowViewState.IdRef="Sequence_398">
+                                      <Sequence sap2010:Annotation.AnnotationText="Se toman valares de la segunda fila" DisplayName="Inactivo mismo BL" sap:VirtualizedContainerService.HintSize="476,1243" sap2010:WorkflowViewState.IdRef="Sequence_398">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -555,13 +555,13 @@
                                             <InArgument x:TypeArguments="x:String" x:Key="in_NumDO">[in_TransactionItem("DOCNROXX").ToString]</InArgument>
                                           </ui:InvokeWorkflowFile.Arguments>
                                         </ui:InvokeWorkflowFile>
-                                        <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe DIAN'" sap:VirtualizedContainerService.HintSize="434,894" sap2010:WorkflowViewState.IdRef="BrowserScope_98" InformativeScreenshot="324e903d58beaf09dff80b96bac68dc2" Selector="&lt;html app='chrome.exe' title='DIAN - MUISCA' /&gt;">
+                                        <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe DIAN'" sap:VirtualizedContainerService.HintSize="434,993" sap2010:WorkflowViewState.IdRef="BrowserScope_98" InformativeScreenshot="324e903d58beaf09dff80b96bac68dc2" Selector="&lt;html app='chrome.exe' title='DIAN - MUISCA' /&gt;">
                                           <ui:BrowserScope.Body>
                                             <ActivityAction x:TypeArguments="x:Object">
                                               <ActivityAction.Argument>
                                                 <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                                               </ActivityAction.Argument>
-                                              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,748" sap2010:WorkflowViewState.IdRef="Sequence_462">
+                                              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,847" sap2010:WorkflowViewState.IdRef="Sequence_462">
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -587,7 +587,7 @@
                                                     <OutArgument x:TypeArguments="x:String">[txtFechaHoraAvisoLlegada]</OutArgument>
                                                   </ui:GetAttribute.Result>
                                                   <ui:GetAttribute.Target>
-                                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="701bde8c35ce62a6cc22b432504d7d10" Selector="&lt;webctrl parentname='JR_PAGE_ANCHOR_0_1' tag='TABLE' /&gt;&lt;webctrl tableCol='9' tableRow='41' tag='TD' /&gt;">
+                                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="701bde8c35ce62a6cc22b432504d7d10" Selector="&lt;webctrl parentname='JR_PAGE_ANCHOR_0_1' tag='TABLE' /&gt;&lt;webctrl tableCol='10' tableRow='41' tag='TD' /&gt;">
                                                       <ui:Target.TimeoutMS>
                                                         <InArgument x:TypeArguments="x:Int32" />
                                                       </ui:Target.TimeoutMS>
@@ -627,6 +627,7 @@
                                                     </ui:Target>
                                                   </ui:GetAttribute.Target>
                                                 </ui:GetAttribute>
+                                                <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;ya!!&quot;]" />
                                               </Sequence>
                                             </ActivityAction>
                                           </ui:BrowserScope.Body>
@@ -5908,7 +5909,7 @@
                               <av:PointCollection x:Key="ConnectorLocation">400,533 400,683.04 150,683.04 150,806.5</av:PointCollection>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <Sequence DisplayName="Registrar en GRM - 2" sap:VirtualizedContainerService.HintSize="1186,3503" sap2010:WorkflowViewState.IdRef="Sequence_192">
+                          <Sequence DisplayName="Registrar en GRM - 2" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_192">
                             <Sequence.Variables>
                               <Variable x:TypeArguments="x:Boolean" Name="swBoton" />
                             </Sequence.Variables>
