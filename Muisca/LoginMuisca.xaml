@@ -5,7 +5,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1398,4539</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1535,4492</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>LoginMuisca_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="21">
@@ -56,7 +56,7 @@
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="LoginMuisca" sap:VirtualizedContainerService.HintSize="1408,4334" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="LoginMuisca" sap:VirtualizedContainerService.HintSize="1408,4327" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="swError" />
       <Variable x:TypeArguments="x:String" Name="strUser" />
@@ -133,7 +133,7 @@
         </Assign>
       </PickBranch>
     </Pick>
-    <If Condition="[swError]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="1366,3700" sap2010:WorkflowViewState.IdRef="If_3">
+    <If Condition="[swError]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="1366,3693" sap2010:WorkflowViewState.IdRef="If_3">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -144,7 +144,7 @@
         <Throw DisplayName="Lanzar excepción" Exception="[New Exception( in_Config(&quot;MSG_ERROR_CONSULTA_DO_MUISCA&quot;).ToString )]" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
       </If.Then>
       <If.Else>
-        <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="1068,3552" sap2010:WorkflowViewState.IdRef="Sequence_11">
+        <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="1026,3545" sap2010:WorkflowViewState.IdRef="Sequence_11">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:Boolean" Name="swMuiscaOld" />
           </Sequence.Variables>
@@ -153,14 +153,14 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Pick DisplayName="Seleccionar tipo Muisca" sap:VirtualizedContainerService.HintSize="1026,601" sap2010:WorkflowViewState.IdRef="Pick_2">
+          <Pick DisplayName="Seleccionar tipo Muisca" sap:VirtualizedContainerService.HintSize="984,594" sap2010:WorkflowViewState.IdRef="Pick_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <PickBranch sap:VirtualizedContainerService.HintSize="426,555" sap2010:WorkflowViewState.IdRef="PickBranch_4">
+            <PickBranch sap:VirtualizedContainerService.HintSize="426,548" sap2010:WorkflowViewState.IdRef="PickBranch_4">
               <PickBranch.Trigger>
                 <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="376,198" sap2010:WorkflowViewState.IdRef="Sequence_3">
                   <sap:WorkflowViewStateService.ViewState>
@@ -191,7 +191,7 @@
                 </Assign>
               </Sequence>
             </PickBranch>
-            <PickBranch sap:VirtualizedContainerService.HintSize="426,555" sap2010:WorkflowViewState.IdRef="PickBranch_5">
+            <PickBranch sap:VirtualizedContainerService.HintSize="384,548" sap2010:WorkflowViewState.IdRef="PickBranch_5">
               <PickBranch.Trigger>
                 <ui:WaitUiElementAppear FoundElement="{x:Null}" DisplayName="Find Element 'SELECT  vistaLogin:frmL...'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_5" WaitActive="False" WaitVisible="False">
                   <ui:WaitUiElementAppear.Target>
@@ -199,14 +199,13 @@
                   </ui:WaitUiElementAppear.Target>
                 </ui:WaitUiElementAppear>
               </PickBranch.Trigger>
-              <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="376,251" sap2010:WorkflowViewState.IdRef="Sequence_5">
+              <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_5">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;False&quot;]" TopMost="True" />
-                <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_5">
+                <Assign DisplayName="Asignar" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_5">
                   <Assign.To>
                     <OutArgument x:TypeArguments="x:Boolean">[swMuiscaOld]</OutArgument>
                   </Assign.To>
@@ -217,7 +216,7 @@
               </Sequence>
             </PickBranch>
           </Pick>
-          <If Condition="[swMuiscaOld]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="1026,1042" sap2010:WorkflowViewState.IdRef="If_1">
+          <If Condition="[swMuiscaOld]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="984,1042" sap2010:WorkflowViewState.IdRef="If_1">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -404,7 +403,7 @@
               </Sequence>
             </If.Else>
           </If>
-          <Sequence DisplayName="Ir a consulta DO - Menu" sap:VirtualizedContainerService.HintSize="1026,636" sap2010:WorkflowViewState.IdRef="Sequence_8">
+          <Sequence DisplayName="Ir a consulta DO - Menu" sap:VirtualizedContainerService.HintSize="984,636" sap2010:WorkflowViewState.IdRef="Sequence_8">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -484,14 +483,14 @@
               </ui:Click.Target>
             </ui:Click>
           </Sequence>
-          <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" ApiKey="BQB+uiS2DXBiaBrGRCbQzi8sNdC5w6pnisxGvtpEHv97+dqbcIp6AxMS0WDl25Ze" DisplayName="Ámbito de pantalla de CV 'TD'" sap:VirtualizedContainerService.HintSize="1026,1061" sap2010:WorkflowViewState.IdRef="CVScope_1" Server="https://cv.uipath.com/" Version="V1">
+          <p:CVScope ContinueOnError="{x:Null}" DelayBefore="{x:Null}" ApiKey="BQB+uiS2DXBiaBrGRCbQzi8sNdC5w6pnisxGvtpEHv97+dqbcIp6AxMS0WDl25Ze" DisplayName="Ámbito de pantalla de CV 'TD'" sap:VirtualizedContainerService.HintSize="984,1061" sap2010:WorkflowViewState.IdRef="CVScope_1" Server="https://cv.uipath.com/" Version="V1">
             <p:CVScope.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="CVSessionData" />
                 </ActivityAction.Argument>
                 <Sequence DisplayName="Hacer" sap2010:WorkflowViewState.IdRef="Sequence_10">
-                  <p:CvElementExistsWithDescriptor Descriptor="[&quot;Target: Icon (687,385,52,50)&quot;]" DesignTimeScaleFactor="1" DisplayName="Elemento CV existente - Icono" sap:VirtualizedContainerService.HintSize="521,106" sap2010:WorkflowViewState.IdRef="CvElementExistsWithDescriptor_1" InformativeScreenshot="92ea71c23b9bf2d831f3c14f89fc6db6" Result="[swError]" Version="V1">
+                  <p:CvElementExistsWithDescriptor Descriptor="[&quot;Target: Icon (687,385,52,50)&quot;]" DesignTimeScaleFactor="1" DisplayName="Elemento CV existente - Icono" sap:VirtualizedContainerService.HintSize="556,106" sap2010:WorkflowViewState.IdRef="CvElementExistsWithDescriptor_1" InformativeScreenshot="92ea71c23b9bf2d831f3c14f89fc6db6" Result="[swError]" Version="V1">
                     <p:CvElementExistsWithDescriptor.DesignTimeDescriptor>
                       <uc:CvDescriptor>
                         <uc:CvDescriptor.Target>
@@ -500,7 +499,7 @@
                       </uc:CvDescriptor>
                     </p:CvElementExistsWithDescriptor.DesignTimeDescriptor>
                   </p:CvElementExistsWithDescriptor>
-                  <If Condition="[swError]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="521,637" sap2010:WorkflowViewState.IdRef="If_2">
+                  <If Condition="[swError]" DisplayName="Si" sap:VirtualizedContainerService.HintSize="556,637" sap2010:WorkflowViewState.IdRef="If_2">
                     <If.Then>
                       <Sequence DisplayName="Secuencia" sap:VirtualizedContainerService.HintSize="376,490" sap2010:WorkflowViewState.IdRef="Sequence_9">
                         <sap:WorkflowViewStateService.ViewState>
