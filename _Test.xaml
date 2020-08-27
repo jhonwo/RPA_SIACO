@@ -1,6 +1,6 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="_Test" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1488,1605" sap2010:WorkflowViewState.IdRef="_Test_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="_Test" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1488,1641" sap2010:WorkflowViewState.IdRef="_Test_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="26">
+    <scg:List x:TypeArguments="x:String" Capacity="52">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -27,6 +27,7 @@
       <x:String>UiPath.CV</x:String>
       <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
       <x:String>Newtonsoft.Json.Linq</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -56,7 +57,7 @@
       <AssemblyReference>System.Data.Entity</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="_Test" sap:VirtualizedContainerService.HintSize="518,1320" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="_Test" sap:VirtualizedContainerService.HintSize="518,1476" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:Dictionary(x:String, x:Object)" Name="Config" />
       <Variable x:TypeArguments="x:String" Default="SIEMENS SAS" Name="varConsignatario" />
@@ -80,6 +81,18 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
+    <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="476,116" sap2010:WorkflowViewState.IdRef="SendHotkey_1" Key="f4" KeyModifiers="Alt" SpecialKey="True">
+      <ui:SendHotkey.Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}">
+          <ui:Target.TimeoutMS>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:Target.TimeoutMS>
+          <ui:Target.WaitForReady>
+            <InArgument x:TypeArguments="ui:WaitForReady" />
+          </ui:Target.WaitForReady>
+        </ui:Target>
+      </ui:SendHotkey.Target>
+    </ui:SendHotkey>
     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke InitAllSettings workflow" sap:VirtualizedContainerService.HintSize="476,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Framework\InitAllSettings.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="x:String" x:Key="in_ConfigFile">Data\Config.xlsx</InArgument>
@@ -87,12 +100,12 @@
         <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="out_Config">[Config]</OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
+    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="476,59" sap2010:WorkflowViewState.IdRef="MessageBox_4" Text="[&quot;Listo!!&quot;]" />
     <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Se registro el Id para la sucursal: &quot; + &quot;(SUCIDXXX)&quot; + &quot; para la proxima consulta en Muisca del DO: &quot; + &quot;(DOCNROXX)&quot; + &quot; y Documento de Transporte: &quot; + &quot;(DOCTRIMP)&quot;]" DisplayName="Send SMTP - Notificar" Email="contacto.j3c@gmail.com" EnableSSL="True" sap:VirtualizedContainerService.HintSize="476,145" sap2010:WorkflowViewState.IdRef="SendMail_1" IsBodyHtml="False" Password="jhrphqoqgsztnyya" Port="587" SecureConnection="Auto" Server="smtp.gmail.com" Subject="Nueva URL acceso Muisca" To="contacto.j3c@gmail.com">
       <ui:SendMail.Files>
         <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
       </ui:SendMail.Files>
     </ui:SendMail>
-    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="476,59" sap2010:WorkflowViewState.IdRef="MessageBox_4" Text="[&quot;Listo!!&quot;]" />
     <Sequence DisplayName="Registrar Sucursal" sap:VirtualizedContainerService.HintSize="476,817" sap2010:WorkflowViewState.IdRef="Sequence_3">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -133,18 +146,10 @@
               </ui:GetAttribute>
               <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke FindWord workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Comunes\FindWord.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_text1">
-                    <Literal x:TypeArguments="x:String">PU_ide_administracion=</Literal>
-                  </InArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_text2">
-                    <Literal x:TypeArguments="x:String">&amp;PU_val_doc_transporte</Literal>
-                  </InArgument>
-                  <OutArgument x:TypeArguments="x:String" x:Key="out_res">
-                    <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="idSucursal" />
-                  </OutArgument>
-                  <InArgument x:TypeArguments="x:String" x:Key="in_textoCompleto">
-                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="urlNavegador" />
-                  </InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_text1">PU_ide_administracion=</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_text2">&amp;PU_val_doc_transporte</InArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="out_res">[idSucursal]</OutArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_textoCompleto">[urlNavegador]</InArgument>
                 </ui:InvokeWorkflowFile.Arguments>
               </ui:InvokeWorkflowFile>
             </Sequence>
@@ -154,21 +159,11 @@
       <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="434,59" sap2010:WorkflowViewState.IdRef="MessageBox_3" Text="[&quot;Sucursal: &quot; + idSucursal]" />
       <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke RegSucursalNueva workflow" sap:VirtualizedContainerService.HintSize="434,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Comunes\RegSucursalNueva.xaml">
         <ui:InvokeWorkflowFile.Arguments>
-          <InArgument x:TypeArguments="x:String" x:Key="in_idSucursal">
-            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="idSucursal" />
-          </InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="in_DesSucursal">
-            <Literal x:TypeArguments="x:String">JUANCS</Literal>
-          </InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="in_CodSucursal">
-            <Literal x:TypeArguments="x:String">JCS</Literal>
-          </InArgument>
-          <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
-            <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="Config" />
-          </InArgument>
-          <InArgument x:TypeArguments="x:String" x:Key="in_conexDB">
-            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Config(&quot;ConexionBD&quot;).ToString" />
-          </InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_idSucursal">[idSucursal]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_DesSucursal">JUANCS</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_CodSucursal">JCS</InArgument>
+          <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[Config]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_conexDB">[Config("ConexionBD").ToString]</InArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
     </Sequence>
