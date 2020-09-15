@@ -2663,31 +2663,31 @@
                                   <av:PointCollection x:Key="ConnectorLocation">160,1063 160,1187</av:PointCollection>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <Sequence DisplayName="Consulta 2  - Syga" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_39">
+                              <Sequence DisplayName="Consulta 2  - Syga" sap:VirtualizedContainerService.HintSize="676,3301" sap2010:WorkflowViewState.IdRef="Sequence_39">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser - Consultar Trafico GRM" sap:VirtualizedContainerService.HintSize="634,1680" sap2010:WorkflowViewState.IdRef="BrowserScope_10" InformativeScreenshot="4f66462209cfb74fc9048a5d291b9d0a" Selector="&lt;html app='chrome.exe' title='Filtros para la consulta' /&gt;">
+                                <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser - Consultar Trafico GRM" sap:VirtualizedContainerService.HintSize="634,1612" sap2010:WorkflowViewState.IdRef="BrowserScope_10" InformativeScreenshot="4f66462209cfb74fc9048a5d291b9d0a" Selector="&lt;html app='chrome.exe' title='Filtros para la consulta' /&gt;">
                                   <ui:BrowserScope.Body>
                                     <ActivityAction x:TypeArguments="x:Object">
                                       <ActivityAction.Argument>
                                         <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                                       </ActivityAction.Argument>
-                                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="594,1534" sap2010:WorkflowViewState.IdRef="Sequence_48">
+                                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="594,1466" sap2010:WorkflowViewState.IdRef="Sequence_48">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                        <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser Ir a consulta SYGA" sap:VirtualizedContainerService.HintSize="552,1442" sap2010:WorkflowViewState.IdRef="BrowserScope_9" InformativeScreenshot="50282bda9bf7b18a4362237a30e08a25" Selector="&lt;html app='chrome.exe' title='Filtros para la consulta' /&gt;">
+                                        <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser Ir a consulta SYGA" sap:VirtualizedContainerService.HintSize="552,1374" sap2010:WorkflowViewState.IdRef="BrowserScope_9" InformativeScreenshot="50282bda9bf7b18a4362237a30e08a25" Selector="&lt;html app='chrome.exe' title='Filtros para la consulta' /&gt;">
                                           <ui:BrowserScope.Body>
                                             <ActivityAction x:TypeArguments="x:Object">
                                               <ActivityAction.Argument>
                                                 <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                                               </ActivityAction.Argument>
-                                              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="518,1296" sap2010:WorkflowViewState.IdRef="Sequence_47">
+                                              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="518,1228" sap2010:WorkflowViewState.IdRef="Sequence_47">
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -2714,7 +2714,7 @@
                                                     </ui:Target>
                                                   </ui:Click.Target>
                                                 </ui:Click>
-                                                <Sequence DisplayName="Generar y consultar por URL" sap:VirtualizedContainerService.HintSize="476,573" sap2010:WorkflowViewState.IdRef="Sequence_494">
+                                                <Sequence DisplayName="Generar y consultar por URL" sap:VirtualizedContainerService.HintSize="476,505" sap2010:WorkflowViewState.IdRef="Sequence_494">
                                                   <sap:WorkflowViewStateService.ViewState>
                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -2729,19 +2729,18 @@
                                                     </Assign.Value>
                                                   </Assign>
                                                   <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,91" sap2010:WorkflowViewState.IdRef="LogMessage_94" Level="Info" Message="[urlConsultaMuisca]" />
-                                                  <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="434,250" sap2010:WorkflowViewState.IdRef="OpenBrowser_7" Url="[urlConsultaMuisca]">
+                                                  <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="434,182" sap2010:WorkflowViewState.IdRef="OpenBrowser_7" Url="[urlConsultaMuisca]">
                                                     <ui:OpenBrowser.Body>
                                                       <ActivityAction x:TypeArguments="x:Object">
                                                         <ActivityAction.Argument>
                                                           <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                                                         </ActivityAction.Argument>
-                                                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,151" sap2010:WorkflowViewState.IdRef="Sequence_493">
+                                                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="200,83" sap2010:WorkflowViewState.IdRef="Sequence_493">
                                                           <sap:WorkflowViewStateService.ViewState>
                                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                             </scg:Dictionary>
                                                           </sap:WorkflowViewStateService.ViewState>
-                                                          <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_3" Text="[&quot;SYGA&quot;]" />
                                                         </Sequence>
                                                       </ActivityAction>
                                                     </ui:OpenBrowser.Body>
@@ -2916,7 +2915,7 @@
                                                 </ui:CommentOut>
                                                 <ui:CommentOut DisplayName="Comentar" sap:VirtualizedContainerService.HintSize="476,51" sap2010:WorkflowViewState.IdRef="CommentOut_34">
                                                   <ui:CommentOut.Body>
-                                                    <Sequence DisplayName="Actividades ignoradas" sap:VirtualizedContainerService.HintSize="526,818" sap2010:WorkflowViewState.IdRef="Sequence_220">
+                                                    <Sequence DisplayName="Actividades ignoradas" sap:VirtualizedContainerService.HintSize="376,818" sap2010:WorkflowViewState.IdRef="Sequence_220">
                                                       <sap:WorkflowViewStateService.ViewState>
                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -3698,14 +3697,14 @@
                                                                   <av:PointCollection x:Key="ConnectorLocation">500,863 500,927</av:PointCollection>
                                                                 </scg:Dictionary>
                                                               </sap:WorkflowViewStateService.ViewState>
-                                                              <Sequence DisplayName="Cargar Login" sap:VirtualizedContainerService.HintSize="418,664" sap2010:WorkflowViewState.IdRef="Sequence_56">
+                                                              <Sequence DisplayName="Cargar Login" sap:VirtualizedContainerService.HintSize="418,565" sap2010:WorkflowViewState.IdRef="Sequence_56">
                                                                 <sap:WorkflowViewStateService.ViewState>
                                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                                                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                                   </scg:Dictionary>
                                                                 </sap:WorkflowViewStateService.ViewState>
-                                                                <Sequence DisplayName="Volver a Administracion" sap:VirtualizedContainerService.HintSize="376,572" sap2010:WorkflowViewState.IdRef="Sequence_57">
+                                                                <Sequence DisplayName="Volver a Administracion" sap:VirtualizedContainerService.HintSize="376,473" sap2010:WorkflowViewState.IdRef="Sequence_57">
                                                                   <sap:WorkflowViewStateService.ViewState>
                                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -3713,7 +3712,6 @@
                                                                     </scg:Dictionary>
                                                                   </sap:WorkflowViewStateService.ViewState>
                                                                   <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[in_TransactionItem(&quot;LABELXXI&quot;).ToString]" />
-                                                                  <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_7" Text="[in_TransactionItem(&quot;LABELXXI&quot;).ToString]" />
                                                                   <ui:SelectItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item - Seleccionar Administracion" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="SelectItem_1" Item="[in_TransactionItem(&quot;LABELXXI&quot;).ToString]">
                                                                     <ui:SelectItem.Items>
                                                                       <scg:List x:TypeArguments="x:String" Capacity="32">
@@ -4441,7 +4439,7 @@
                                   <av:Size x:Key="ShapeSize">200,66</av:Size>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <Sequence DisplayName="Inclusión forzosa" sap:VirtualizedContainerService.HintSize="788,2236" sap2010:WorkflowViewState.IdRef="Sequence_354">
+                              <Sequence DisplayName="Inclusión forzosa" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_354">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -4455,7 +4453,7 @@
                                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <Flowchart DisplayName="Consulta Doc declarante" sap:VirtualizedContainerService.HintSize="704,636" sap2010:WorkflowViewState.IdRef="Flowchart_5">
+                                  <Flowchart DisplayName="Consulta Doc declarante" sap:VirtualizedContainerService.HintSize="634,636" sap2010:WorkflowViewState.IdRef="Flowchart_5">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -4572,7 +4570,7 @@
                                           <av:Size x:Key="ShapeSize">200,66</av:Size>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <Sequence DisplayName="Generar y consultar por URL" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_496">
+                                      <Sequence DisplayName="Generar y consultar por URL" sap:VirtualizedContainerService.HintSize="476,505" sap2010:WorkflowViewState.IdRef="Sequence_496">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -4587,19 +4585,18 @@
                                           </Assign.Value>
                                         </Assign>
                                         <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,91" sap2010:WorkflowViewState.IdRef="LogMessage_95" Level="Info" Message="[urlConsultaMuisca]" />
-                                        <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="434,250" sap2010:WorkflowViewState.IdRef="OpenBrowser_8" Url="[urlConsultaMuisca]">
+                                        <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="434,182" sap2010:WorkflowViewState.IdRef="OpenBrowser_8" Url="[urlConsultaMuisca]">
                                           <ui:OpenBrowser.Body>
                                             <ActivityAction x:TypeArguments="x:Object">
                                               <ActivityAction.Argument>
                                                 <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                                               </ActivityAction.Argument>
-                                              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,151" sap2010:WorkflowViewState.IdRef="Sequence_495">
+                                              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="200,83" sap2010:WorkflowViewState.IdRef="Sequence_495">
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
-                                                <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_4" Text="[&quot;Inclusion - Declarantes&quot;]" />
                                               </Sequence>
                                             </ActivityAction>
                                           </ui:OpenBrowser.Body>
@@ -5099,7 +5096,7 @@
                                                                 <av:Size x:Key="ShapeSize">200,66</av:Size>
                                                               </scg:Dictionary>
                                                             </sap:WorkflowViewStateService.ViewState>
-                                                            <Sequence DisplayName="Generar y consultar por URL" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_500">
+                                                            <Sequence DisplayName="Generar y consultar por URL" sap:VirtualizedContainerService.HintSize="476,505" sap2010:WorkflowViewState.IdRef="Sequence_500">
                                                               <sap:WorkflowViewStateService.ViewState>
                                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -5114,19 +5111,18 @@
                                                                 </Assign.Value>
                                                               </Assign>
                                                               <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,91" sap2010:WorkflowViewState.IdRef="LogMessage_96" Level="Info" Message="[urlConsultaMuisca]" />
-                                                              <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="434,250" sap2010:WorkflowViewState.IdRef="OpenBrowser_9" Url="[urlConsultaMuisca]">
+                                                              <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="434,182" sap2010:WorkflowViewState.IdRef="OpenBrowser_9" Url="[urlConsultaMuisca]">
                                                                 <ui:OpenBrowser.Body>
                                                                   <ActivityAction x:TypeArguments="x:Object">
                                                                     <ActivityAction.Argument>
                                                                       <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                                                                     </ActivityAction.Argument>
-                                                                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,151" sap2010:WorkflowViewState.IdRef="Sequence_499">
+                                                                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="200,83" sap2010:WorkflowViewState.IdRef="Sequence_499">
                                                                       <sap:WorkflowViewStateService.ViewState>
                                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                         </scg:Dictionary>
                                                                       </sap:WorkflowViewStateService.ViewState>
-                                                                      <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_5" Text="[&quot;Inclusion - Perfilados&quot;]" />
                                                                     </Sequence>
                                                                   </ActivityAction>
                                                                 </ui:OpenBrowser.Body>
@@ -5952,7 +5948,7 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                         </ui:AppendLine>
-                        <Flowchart DisplayName="Diagrama de flujo - Validar Consulta Documento" sap:VirtualizedContainerService.HintSize="1492,636" sap2010:WorkflowViewState.IdRef="Flowchart_4">
+                        <Flowchart DisplayName="Diagrama de flujo - Validar Consulta Documento" sap:VirtualizedContainerService.HintSize="644,636" sap2010:WorkflowViewState.IdRef="Flowchart_4">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -6143,7 +6139,7 @@
                                 <av:Size x:Key="ShapeSize">200,66</av:Size>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <Sequence DisplayName="Generar y consultar por URL" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_481">
+                            <Sequence DisplayName="Generar y consultar por URL" sap:VirtualizedContainerService.HintSize="476,505" sap2010:WorkflowViewState.IdRef="Sequence_481">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -6158,19 +6154,18 @@
                                 </Assign.Value>
                               </Assign>
                               <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,91" sap2010:WorkflowViewState.IdRef="LogMessage_97" Level="Info" Message="[urlConsultaMuisca]" />
-                              <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="434,250" sap2010:WorkflowViewState.IdRef="OpenBrowser_4" Url="[urlConsultaMuisca]">
+                              <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="434,182" sap2010:WorkflowViewState.IdRef="OpenBrowser_4" Url="[urlConsultaMuisca]">
                                 <ui:OpenBrowser.Body>
                                   <ActivityAction x:TypeArguments="x:Object">
                                     <ActivityAction.Argument>
                                       <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                                     </ActivityAction.Argument>
-                                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,151" sap2010:WorkflowViewState.IdRef="Sequence_480">
+                                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="200,83" sap2010:WorkflowViewState.IdRef="Sequence_480">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_6" Text="[&quot;Fecha Real&quot;]" />
                                     </Sequence>
                                   </ActivityAction>
                                 </ui:OpenBrowser.Body>
