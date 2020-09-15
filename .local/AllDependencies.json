@@ -1717,9 +1717,9 @@
     "restore": {
       "projectUniqueName": "FinalizacionLocalizacionMercancias_BOG",
       "projectName": "FinalizacionLocalizacionMercancias_BOG",
-      "projectPath": "C:\\Users\\Administrator\\Documents\\UiPath\\FinalizacionLocalizacionMercancias_2.0.9\\.local",
+      "projectPath": "C:\\Users\\Administrator\\Documents\\UiPath\\FinalizacionLocalizacionMercancias_2.1.0\\.local",
       "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Administrator\\Documents\\UiPath\\FinalizacionLocalizacionMercancias_2.0.9\\.local"
+      "outputPath": "C:\\Users\\Administrator\\Documents\\UiPath\\FinalizacionLocalizacionMercancias_2.1.0\\.local"
     },
     "frameworks": {
       "net461": {
